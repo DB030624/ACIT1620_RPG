@@ -1,0 +1,43 @@
+body {
+    margin:0;
+
+}
+
+section.content {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    section.content {
+        flex-direction: column;
+    }
+
+    article, aside {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    section.content {
+        flex-direction: row;
+}
+
+    article, aside {
+        flex:1;
+        margin: 10;
+    }
+
+    aside {
+        max-width: 300px;
+    }
+}
