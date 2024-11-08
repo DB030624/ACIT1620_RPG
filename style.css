@@ -1,0 +1,11 @@
+#game {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+#choices button {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
