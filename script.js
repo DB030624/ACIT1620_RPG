@@ -5,7 +5,7 @@ const story = {
             { text: "You are heading to the Forest", next: "leftPath" },
             { text: "You are heading to the Cave", next: "rightPath" }
         ],
-        background: "red"
+        background: "lightblue"
     },
     leftPath: {
         text: "You encounter a friendly traveler who offers you a map.",
@@ -55,11 +55,12 @@ function displayStory(part) {
     storyTextElement.textContent = story[part].text;
     choicesElement.innerHTML = ""; // Clear previous choices
 
-    document.getElementById("game").style.backgroundColor = story[part].background || "blue";
+    document.getElementById("game").style.backgroundColor = story[part].background || "lightpink";
     
     story[part].choices?.forEach(choice => {
         const button = document.createElement("button");
         button.textContent = choice.text;
+        button.style.margin = '10px';
         button.onclick = () => displayStory(choice.next);
         choicesElement.appendChild(button);
     });

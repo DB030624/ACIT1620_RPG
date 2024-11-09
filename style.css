@@ -1,9 +1,46 @@
-#game {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+html, body {
+    padding: 0;
+    margin: 0;
 }
+
+body {
+    background-color: rgba(232, 255, 224, 0.709);
+}
+header {
+    display: flex;
+    background-color: deepskyblue;
+    justify-content: center;
+}
+#game {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 2px;
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+
+    border-width: 2px;
+    border-color: lightgrey;
+    border-style: solid;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+}
+
+#choices {
+    position: relative;
+    bottom: -90px;
+    border: 1px solid black;
+    width: 100%;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+}
+
 #choices button {
     margin-top: 10px;
     padding: 10px;
