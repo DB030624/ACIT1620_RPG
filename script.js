@@ -4,7 +4,8 @@ const story = {
         choices: [
             { text: "You are heading to the Forest", next: "leftPath" },
             { text: "You are heading to the Cave", next: "rightPath" }
-        ]
+        ],
+        background: "red"
     },
     leftPath: {
         text: "You encounter a friendly traveler who offers you a map.",
@@ -31,9 +32,19 @@ const story = {
         text: "You wander lost for hours. Game over.",
         choices: [
             {text: "Go Back", next: "start"}
-        ] },
-    scareAnimal: { text: "The animal runs away. You continue safely." },
-    runAway: { text: "You fall and hurt yourself. Game over." }
+        ] 
+    },
+    scareAnimal: { 
+        text: "The animal runs away. You continue safely.", 
+        choices: [
+            {text: "Go Back", next: "start"}
+        ]
+    },
+    runAway: { 
+        text: "You fall and hurt yourself. Game over.",
+        choices: [
+            {text: "Go back", next: "start"}
+        ] }
 };
 
 
@@ -43,6 +54,8 @@ const choicesElement = document.getElementById("choices");
 function displayStory(part) {
     storyTextElement.textContent = story[part].text;
     choicesElement.innerHTML = ""; // Clear previous choices
+
+    document.getElementById("game").style.backgroundColor = story[part].background || "blue";
     
     story[part].choices?.forEach(choice => {
         const button = document.createElement("button");
@@ -51,6 +64,5 @@ function displayStory(part) {
         choicesElement.appendChild(button);
     });
 }
-
 // Start the game
 displayStory("start");
