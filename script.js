@@ -52,7 +52,16 @@ const storyTextElement = document.getElementById("story-text");
 const choicesElement = document.getElementById("choices");
 
 function displayStory(part) {
-    storyTextElement.textContent = story[part].text;
+    storyTextElement.textContent = ''; 
+    let index = 0;
+    function textWriter() {
+        if (index < story[part].text.length) {
+            storyTextElement.textContent += story[part].text.charAt(index);
+            index++;
+            setTimeout(textWriter, 30); 
+        }
+    }
+    textWriter();
     choicesElement.innerHTML = ""; // Clear previous choices
 
     document.getElementById("game").style.backgroundColor = story[part].background || "lightpink";
