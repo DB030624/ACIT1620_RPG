@@ -69,7 +69,7 @@ function displayStory(part) {
     story[part].choices?.forEach(choice => {
         const button = document.createElement("button");
         button.textContent = choice.text;
-        button.style.margin = '20px';
+        button.style.margin = '10px';
         button.onclick = () => displayStory(choice.next);
         choicesElement.appendChild(button);
     });
