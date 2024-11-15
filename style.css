@@ -6,13 +6,16 @@ html, body {
 body {
     background-color: rgba(232, 255, 224, 0.709);
 }
+
 header {
     display: flex;
     background-color: deepskyblue;
     justify-content: center;
 }
+
 #game {
     display: flex;
+    position: relative;
     flex-direction: column;
     
     width: 500px;
@@ -30,11 +33,17 @@ header {
     border-style: solid;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
 }
+
 #story-text
 {
-margin-top: auto; 
-margin-bottom: auto;
+    margin-top: auto; 
+    margin-bottom: auto;
 }
+
+#gameContent {
+    border: 1px solid black;
+}
+
 #choices {
     
     border: 1px solid black;
