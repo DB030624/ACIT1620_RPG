@@ -12,17 +12,14 @@ const story = {
         choices: [
             { text: "Accept the map", next: "mapAccepted" },
             { text: "Decline the offer", next: "noMap" }
-        ],
-        background: "#ffc107", // Bright yellow
+        ]
     },
     rightPath: {
         text: "A wild animal blocks your way.",
         choices: [
             { text: "Try to scare it off", next: "scareAnimal" },
             { text: "Run away", next: "runAway" }
-        ],
-        background: "#d9534f", // Red for danger
-
+        ]
     },
     // Continue defining outcomes or further choices for each option
     mapAccepted: { 
@@ -35,36 +32,24 @@ const story = {
         text: "You wander lost for hours. Game over.",
         choices: [
             {text: "Go Back", next: "start"}
-        ],
-        background: "#6f42c1" // Purple for mystery
-
+        ] 
     },
     scareAnimal: { 
         text: "The animal runs away. You continue safely.", 
         choices: [
             {text: "Go Back", next: "start"}
-        ],
-        background: "#5bc0de" // Calm blue
-
+        ]
     },
     runAway: { 
         text: "You fall and hurt yourself. Game over.",
         choices: [
             {text: "Go back", next: "start"}
-        ],
-        background: "#343a40" // Dark gray
-    },
-    losingScreen: {
-        text: "You lost tic tac toe",
-        choices: [
-            {text: "Go Home", next: "start"}
-        ]
-    }
+        ] }
 };
+
 
 const storyTextElement = document.getElementById("story-text");
 const choicesElement = document.getElementById("choices");
-const gameElement = document.getElementById("game");
 
 function displayStory(part) {
     storyTextElement.textContent = ''; 
@@ -76,22 +61,18 @@ function displayStory(part) {
             setTimeout(textWriter, 30); 
         }
     }
-
     textWriter();
-
     choicesElement.innerHTML = ""; // Clear previous choices
 
-    gameElement.style.backgroundColor = story[part].background || "white"; //Changes background to the part we are at
+    document.getElementById("game").style.backgroundColor = story[part].background || "lightpink";
     
-    // the ? Checks if choices exists first
     story[part].choices?.forEach(choice => {
-        const button = document.createElement("button"); //makes a button on each.
-        button.textContent = choice.text; //the text of the button will be text of choice.
+        const button = document.createElement("button");
+        button.textContent = choice.text;
         button.style.margin = '20px';
-        button.onclick = () => displayStory(choice.next); //on button click, move on to the next story slide
+        button.onclick = () => displayStory(choice.next);
         choicesElement.appendChild(button);
     });
 }
-
 // Start the game
 displayStory("start");

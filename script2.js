@@ -11,11 +11,7 @@ const story = {
     leftPath: {
         text: "You encounter a traveler who challenges you to a game of Tic Tac Toe.",
         background: "#ffc107", // Bright yellow
-<<<<<<< Updated upstream
         miniGame: () => startRockPaperScissors() // Trigger the mini-game here
-=======
-        miniGame: true // Trigger the mini-game here
->>>>>>> Stashed changes
     },
     rightPath: {
         text: "A wild animal blocks your way.",
@@ -117,7 +113,6 @@ function startTicTacToe(container) {
         if (checkWinner()) {
             statusElement.textContent = "Player X wins!";
             endGame();
-            displayStory(nextPath)
         } else if (board.every(cell => cell)) {
             statusElement.textContent = "It's a tie!";
             endGame();
