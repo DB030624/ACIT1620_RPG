@@ -11,7 +11,7 @@ const story = {
     leftPath: {
         text: "You encounter a traveler who challenges you to a game of Tic Tac Toe.",
         background: "#ffc107", // Bright yellow
-        miniGame: startTicTacToe() // Trigger the mini-game here
+        miniGame: () => startRockPaperScissors() // Trigger the mini-game here
     },
     rightPath: {
         text: "A wild animal blocks your way.",
@@ -54,11 +54,12 @@ function displayStory(part) {
     choicesElement.innerHTML = ""; // Clear previous choices
     gameElement.style.backgroundColor = story[part].background || "rgba(232, 255, 224, 0.709)";
 
-    // // Check if a mini-game is required
-    // if (story[part].miniGame) {
-    //     startTicTacToe(gameElement); // Start the mini-game inside the `#game` div
-    //     return;
-    // }
+    // Check if a mini-game is required
+    if (story[part].miniGame) {
+        startRockPaperScissors(gameElement)
+        // startTicTacToe(gameElement); // Start the mini-game inside the `#game` div
+        return;
+    }
 
     // Loop through choices and create buttons
     story[part].choices?.forEach(choice => {
@@ -69,7 +70,7 @@ function displayStory(part) {
     });
 }
 
-// function startTicTacToe(container) {
+function startTicTacToe(container) {
     // Clear the `#game` div and add the Tic Tac Toe board
     container.innerHTML = `
         <h2 id="game-status">Player X's turn</h2>
@@ -169,7 +170,99 @@ function displayStory(part) {
         // Disable further interaction
         Array.from(boardElement.children).forEach(cell => (cell.onclick = null));
     }
-// }
+}
+
+
+function startRockPaperScissors(container) {
+    container.innerHTML = 
+    `
+    <h2 id = "game_status">Rock Paper Scissors Minigame</h2>
+    <div id = "RPS_board" style = "display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 15px; width: 100%; height: 100px; margin-buttom: auto;"></div>
+    <button id="continue-button" style="display: none; margin-top: 10px;">Continue</button>
+    `
+    const boardElement = document.getElementById("RPS_board");
+    const statusElement = document.getElementById("game_status");
+    const continueButton = document.getElementById("continue-button");
+
+    const rockBtn = document.createElement("button");
+    rockBtn.innerHTML = "Rock";
+    boardElement.appendChild(rockBtn);
+    const paperBtn = document.createElement("button");
+    paperBtn.innerHTML = "Paper";
+    boardElement.appendChild(paperBtn);
+    const scissorsBtn = document.createElement("button");
+    scissorsBtn.innerHTML = "Scissors";
+    boardElement.appendChild(scissorsBtn);
+
+
+    rockBtn.addEventListener("click", function() 
+    {
+        playGame("Rock");
+    });
+        
+    paperBtn.addEventListener("click", function() 
+    {
+        playGame("Paper");
+    });
+        
+    scissorsBtn.addEventListener("click", function() 
+    {
+        playGame("Scissors");
+    });
+
+    function playGame(playerChoice)
+    {
+        const computerChoice = Math.floor(Math.random() * 3) + 1;
+  
+        if (playerChoice === "Rock" && computerChoice === 2 ||
+            playerChoice === "Paper" && computerChoice === 3 ||
+            playerChoice === "Scissors" && computerChoice === 1) 
+        {
+          endGame("You win!");
+        } 
+        else if (playerChoice === "Rock" && computerChoice === 3 ||
+                   playerChoice === "Paper" && computerChoice === 1 ||
+                   playerChoice === "Scissors" && computerChoice === 2) 
+        {
+            statusElement.textContent = "It's a tie, try again!"
+        } 
+        else 
+        {
+            return;
+        }
+
+        function endGame(result) {
+            statusElement.textContent = result;
+            continueButton.style.display = "block"; // Show "Continue" button
+            rockBtn.removeEventListener("click", playGame);
+            paperBtn.removeEventListener("click", playGame);
+            scissorsBtn.removeEventListener("click", playGame);
+            continueButton.onclick = () => {
+                // Reset the `#game` div and continue the story
+                displayStory("gameComplete");
+            };
+    
+            // Disable further interaction
+            Array.from(boardElement.children).forEach(cell => (cell.onclick = null));
+        }
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Start the story
