@@ -73,12 +73,6 @@ function startTicTacToe() {
     const originalHTML = gameElement.innerHTML; // Save the current HTML
 
     // Set up Tic Tac Toe UI
-    gameElement.innerHTML = `
-        <h2 id="game-status">Player X's turn</h2>
-        <div id="tic-tac-toe-board" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 100%; height: 300px;"></div>
-        <button id="continue-button" style="display: none; margin-top: 10px;">Continue</button>
-    `;
-
     const board = Array(9).fill(null); // 3x3 board as a 1D array
     const boardElement = document.getElementById("tic-tac-toe-board");
     const statusElement = document.getElementById("game-status");
