@@ -131,6 +131,7 @@
             </div>
             <div class='buttonContainer'>
                 <button class="gofirst">Go first</button>
+                <button class="goRps">Go RPS</button>
             </div>
         </div>
 
@@ -163,6 +164,8 @@
         const gothirdButtons = document.querySelectorAll('.gothird');
 
         const gofourthButtons = document.querySelectorAll('.gofourth');
+
+        const goRpsButtons = document.querySelectorAll('.goRps');
 
         let count = 0
 
@@ -204,6 +207,13 @@
                 } else if (count === 0) {
                     fourthresult.innerHTML = ''
                 }
+            });
+        });
+
+        goRpsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                hidepages();
+                document.querySelector('#rpsPage').style.display = 'block';
             });
         });
 
