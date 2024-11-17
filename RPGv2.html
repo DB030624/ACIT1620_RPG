@@ -191,10 +191,11 @@
             button.addEventListener('click', () => {
                 hidepages();
                 document.querySelector('#fourthpage').style.display = 'block';
+                let fourthresult = document.querySelector('#fourthresult');
                 if (count === 1) {
-                    document.querySelector('#fourthpage .box p').textContent = "you won"
+                    fourthresult.innerHTML = "you won"
                 } else if (count === 0) {
-                    codument.querySelector('#fourthpage .box p').textContent = ''
+                    fourthresult.innerHTML = ''
                 }
             });
         });
