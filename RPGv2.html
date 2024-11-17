@@ -127,7 +127,7 @@
         <div id="fourthpage" class="page">
             <p>This is the Fourth Page</p>
             <div class="box">
-
+                <p id="fourthresult"></p>
             </div>
             <div class='buttonContainer'>
                 <button class="gofirst">Go first</button>
@@ -192,9 +192,9 @@
                 hidepages();
                 document.querySelector('#fourthpage').style.display = 'block';
                 if (count === 1) {
-                    document.querySelector('#fourthpage .box').textContent = "you won"
+                    document.querySelector('#fourthpage .box p').textContent = "you won"
                 } else if (count === 0) {
-                    codument.querySelector('#fourthpage .box').textContent = ''
+                    codument.querySelector('#fourthpage .box p').textContent = ''
                 }
             });
         });
