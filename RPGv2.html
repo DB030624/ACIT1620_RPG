@@ -193,6 +193,8 @@
                 document.querySelector('#fourthpage').style.display = 'block';
                 if (count === 1) {
                     document.querySelector('#fourthpage .box').textContent = "you won"
+                } else if (count === 0) {
+                    codument.querySelector('#fourthpage .box').textContent = ''
                 }
             });
         });
