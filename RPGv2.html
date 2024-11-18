@@ -67,6 +67,20 @@
         #forest {
             background-color: lightgreen;
         }
+        #rpsPage .box h2
+        {
+            margin-bottom: auto;
+            text-align: center;
+        }
+        #rpsPage .box #rpsbuttons
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 100%;
+            height: 100px;
+        }
+
     </style>
 </head>
 <body>
@@ -138,6 +152,12 @@
         <div id="rpsPage" class="page">
             <p>It's fighting time</p>
             <div class="box">
+                <h2 id="game_status">Rock Paper Scissors</h2>
+                <div id="rpsButtons">
+                    <button id="rockBtn">Rock</button>
+                    <button id="paperBtn">Paper</button>
+                    <button id="scissorsBtn">Scissors</button>
+                </div>
 
             </div>
         </div>
@@ -225,6 +245,57 @@
             });
         }
 
+        rockBtn.addEventListener("click", function() 
+        {
+            playGame("Rock");
+        });
+            
+        paperBtn.addEventListener("click", function() 
+        {
+            playGame("Paper");
+        });
+            
+        scissorsBtn.addEventListener("click", function() 
+        {
+            playGame("Scissors");
+        });
+
+        function playGame(playerChoice)
+        {
+            let computerChoice = Math.floor(Math.random() * 3) + 1;
+            switch (computerChoice)
+            {
+                case 1:
+                    game_status.innerHTML = "Your opponent choose paper!<br>";
+                    break;
+
+                case 2:
+                    game_status.innerHTML = "Your opponent choose scissors!<br>";
+                    break;
+                
+                case 3:
+                    game_status.innerHTML = "Your opponent choose rock!<br>";
+                    break;
+                
+            }
+
+            if (playerChoice === "Rock" && computerChoice === 2 ||
+                playerChoice === "Paper" && computerChoice === 3 ||
+                playerChoice === "Scissors" && computerChoice === 1) 
+            {
+                game_status.innerHTML += "You Win!";
+            } 
+            else if (playerChoice === "Rock" && computerChoice === 3 ||
+                    playerChoice === "Paper" && computerChoice === 1 ||
+                    playerChoice === "Scissors" && computerChoice === 2) 
+            {
+                game_status.innerHTML += "It's a tie, try again!";
+            } 
+            else 
+            {
+                game_status.innerHTML += "You Lose...";
+            }
+        }
     </script>
 </body>
 </html>
