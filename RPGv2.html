@@ -247,20 +247,20 @@
 
         rockBtn.addEventListener("click", function() 
         {
-            playGame("Rock");
+            playRPS("Rock");
         });
             
         paperBtn.addEventListener("click", function() 
         {
-            playGame("Paper");
+            playRPS("Paper");
         });
             
         scissorsBtn.addEventListener("click", function() 
         {
-            playGame("Scissors");
+            playRPS("Scissors");
         });
 
-        function playGame(playerChoice)
+        function playRPS(playerChoice)
         {
             let computerChoice = Math.floor(Math.random() * 3) + 1;
             switch (computerChoice)
