@@ -81,6 +81,14 @@
             height: 100px;
         }
 
+        #tic-tac-toe-board {
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 5px; 
+            width: 100%; 
+            height: 300px;
+        }
+
     </style>
 </head>
 <body>
@@ -167,6 +175,10 @@
             <p>
                 It's tictactoe time
             </p>
+            <h2 id="game-status">Player X's turn</h2>
+            <div id="tic-tac-toe-board" >
+            </div>
+            <button id="continue-button" style="display: none; margin-top: 10px;">Continue</button>
         </div>
         <p>
             counter = <span id="count">0</span>
@@ -242,6 +254,13 @@
                 document.querySelector('#rpsPage').style.display = 'block';
             });
         });
+
+        goTTTButtons.foreach(button => {
+            button.addEventListener('click', () => {
+                highepages();
+                document.querySelector('#TicTacToePage').style.display = 'block';
+            })
+        })
 
         function hidepages() {
             // Get all elements with the class 'page' and hide them
