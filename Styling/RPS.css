@@ -1,0 +1,13 @@
+#rpsPage .box h2
+{
+    margin-bottom: auto;
+    text-align: center;
+}
+#rpsPage #rpsbuttons
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    height: 100px;
+}
