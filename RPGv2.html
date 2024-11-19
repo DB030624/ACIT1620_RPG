@@ -149,6 +149,7 @@
             </div>
         </div>
 
+        <!-- Rock paper scissors minigame block-->
         <div id="rpsPage" class="page">
             <p>It's fighting time</p>
             <div class="box">
@@ -163,6 +164,7 @@
             </div>
         </div>
 
+        <!-- Tic tac toe minigame block-->
         <div id="TicTacToePage" class="page">
             <p>
                 It's tictactoe time
@@ -251,6 +253,7 @@
             });
         }
 
+        // adding event listners for all the rps mini game buttons
         rockBtn.addEventListener("click", function() 
         {
             playRPS("Rock");
@@ -266,8 +269,10 @@
             playRPS("Scissors");
         });
 
+        // Rock paper scissors mini game code section
         function playRPS(playerChoice)
         {
+            // random computer choice
             let computerChoice = Math.floor(Math.random() * 3) + 1;
             switch (computerChoice)
             {
@@ -285,6 +290,7 @@
                 
             }
 
+            // displaying rps mini game result on the page
             if (playerChoice === "Rock" && computerChoice === 2 ||
                 playerChoice === "Paper" && computerChoice === 3 ||
                 playerChoice === "Scissors" && computerChoice === 1) 
