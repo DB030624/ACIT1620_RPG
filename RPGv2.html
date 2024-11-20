@@ -15,7 +15,7 @@
     </header>
     <div id="gameContent">
 
-        <div id="firstpage" class="page active">
+        <div id="firstPage" class="page active">
             <p class="firstpage" id="firstp">This is the first page</p>
             <div class="box">
                 <div id="startimg">
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div id="secondpage" class="page">
+        <div id="secondPage" class="page">
 
             <p class="secondpage" id="secondp">This is the second page</p>
 
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <div id="thirdpage" class="page">
+        <div id="thirdPage" class="page">
             <p>This is the third page</p>
             <div id="caves" class="box">
                 <div id="cavesimg">
@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <div id="fourthpage" class="page">
+        <div id="fourthPage" class="page">
             <p>This is the Fourth Page</p>
             <div class="box">
                 <p id="fourthresult"></p>
@@ -111,24 +111,20 @@
 
     </div>
     <script>
-        const firstpage = document.querySelector('.firstpage')
-        const secondPage = document.querySelector(".secondpage")
-        const thirdpage = document.querySelector('.thirdpage')
-        const fourthpage = document.querySelector('.fourthpage')
+        // saving each page into a variable
+        const firstPage = document.querySelector('#firstPage')
+        const secondPage = document.querySelector("#secondPage")
+        const thirdPage = document.querySelector('#thirdPage')
+        const fourthPage = document.querySelector('#fourthPage')
 
         const allpages = document.querySelectorAll('.page');
 
-
+        // saving each button as a variable
         const gofirstButtons = document.querySelectorAll('.gofirst');
-
         const gosecondButtons = document.querySelectorAll('.gosecond');
-
         const gothirdButtons = document.querySelectorAll('.gothird');
-
         const gofourthButtons = document.querySelectorAll('.gofourth');
-
         const goRpsButtons = document.querySelectorAll('.goRps');
-
         const goTTTButtons = document.querySelectorAll('.goTTT');
 
         let count = 0
@@ -139,7 +135,7 @@
         gofirstButtons.forEach(button => {
             button.addEventListener('click', () => {
                 hidepages();
-                document.querySelector('#firstpage').style.display = 'block';
+                firstPage.style.display = 'block';
                 count = 0
                 counter.textContent = count
             });
@@ -148,7 +144,7 @@
         gosecondButtons.forEach(button => {
             button.addEventListener('click', () => {
                 hidepages();
-                document.querySelector('#secondpage').style.display = 'block';
+                secondPage.style.display = 'block';
                 count++
                 counter.textContent = count
             });
@@ -157,14 +153,14 @@
         gothirdButtons.forEach(button => {
             button.addEventListener('click', () => {
                 hidepages();
-                document.querySelector('#thirdpage').style.display = 'block';
+                thirdPage.style.display = 'block';
             });
         });
 
         gofourthButtons.forEach(button => {
             button.addEventListener('click', () => {
                 hidepages();
-                document.querySelector('#fourthpage').style.display = 'block';
+                fourthPage.style.display = 'block';
                 let fourthresult = document.querySelector('#fourthresult');
                 if (count === 1) {
                     fourthresult.innerHTML = "you won"
@@ -196,17 +192,16 @@
             });
         }
 
+        
         // adding event listners for all the rps mini game buttons
         rockBtn.addEventListener("click", function() 
         {
             playRPS("Rock");
-        });
-            
+        });            
         paperBtn.addEventListener("click", function() 
         {
             playRPS("Paper");
-        });
-            
+        });            
         scissorsBtn.addEventListener("click", function() 
         {
             playRPS("Scissors");
