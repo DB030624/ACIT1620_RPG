@@ -128,30 +128,44 @@
         const gofourthButtons = document.querySelectorAll('.gofourth');
         const goRpsButtons = document.querySelectorAll('.goRps');
         const goTTTButtons = document.querySelectorAll('.goTTT');
+        
+        // holds all goto buttons as a array.
+        let goToBTN = [
+            [gofirstButtons, firstPage],
+            [gosecondButtons, secondPage],
+            [gothirdButtons, thirdPage],
+            [gofourthButtons, fourthPage],
+            
+            [goRpsButtons, rpsPage],
+            [goTTTButtons, tttPage]
+        ];
 
         let count = 0
 
         const counter = document.querySelector("#count");
 
         // Loop through the NodeList and add a click event listener to each button
-        function goToButtonListener(element, selector)
+        function goToButtonListener(element)
         {
-            element.forEach(button => 
+            element[0].forEach(button => 
             {
                 button.addEventListener("click", () => 
                 {
                     hidepages();
-                    selector.style.display = "block"
+                    element[1].style.display = "block"
                 }
             )}
         )}
+
+        // loop through the gotobtn array list and call the add listener function.
+        goToBTN.forEach(goToButtonListener);
         
-        goToButtonListener(gofirstButtons, firstPage);
-        goToButtonListener(gosecondButtons, secondPage);
-        goToButtonListener(gothirdButtons, thirdPage);
-        goToButtonListener(gofourthButtons, fourthPage);
-        goToButtonListener(goTTTButtons, tttPage);
-        goToButtonListener(goRpsButtons, rpsPage);
+        // goToButtonListener(gofirstButtons, firstPage);
+        // goToButtonListener(gosecondButtons, secondPage);
+        // goToButtonListener(gothirdButtons, thirdPage);
+        // goToButtonListener(gofourthButtons, fourthPage);
+        // goToButtonListener(goTTTButtons, tttPage);
+        // goToButtonListener(goRpsButtons, rpsPage);
 
 
 
