@@ -61,3 +61,225 @@ button {
 #forest {
     background-color: lightgreen;
 }
+
+  /* creating the sky*/
+  .sky {
+    position: absolute;
+    top: 82px;
+    left: 330px;
+    width: 51.5%;
+    height: 30%;
+    background: linear-gradient(to bottom, #111, #222, #333);
+    overflow: hidden;
+    z-index: 1;
+  }
+  /*lightning effect*/
+  .lightning {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    z-index: 2;
+    animation: lightning-flash 5s infinite;
+  }
+  /* lightning animation*/
+  @keyframes lightning-flash {
+    0%, 90% {
+      opacity: 0;
+    }
+    91% {
+      opacity: 1;
+    }
+    93% {
+      opacity: 0;
+    }
+    94% {
+      opacity: 1;
+    }
+    96% {
+      opacity: 0;
+    }
+  }
+  /*creating a landscape*/
+  .landscape {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    z-index: 3;
+  }
+  
+  /* creating ground*/
+  .ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, #3b1d06, #632b0a);
+    overflow: hidden;
+  }
+  
+  /*positioning of flame*/
+  .flames {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  /* creating flame element*/
+  .flame {
+    width: 15px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 200, 0, 1) 20%, rgba(255, 100, 0, 0.8) 60%, transparent 80%); /*defines a gradient that radiates from the center of a circle outward.*/
+    border-radius: 50%;
+    animation: flame-flicker 1.5s infinite ease-in-out;
+    position: relative;
+  }
+  
+  /* odd flames are bigger and animation lasts longer*/
+  .flame:nth-child(odd) {
+    height: 120px;
+    animation-duration: 1.8s;
+  }
+
+  /* even flames are shorter and last shorter*/
+  .flame:nth-child(even) {
+    height: 80px;
+    animation-duration: 1.3s;
+  }
+  
+ 
+ /* animation for flames*/ 
+  @keyframes flame-flicker {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-20px) scale(1.2);
+      opacity: 0.8;
+    }
+  }
+  
+  .sky-winning {
+    position: absolute;
+    top: 82px;
+    left: 330px;
+    width: 51.5%;
+    height: 30%;
+    background: linear-gradient(to bottom, #87CEFA, #B0E0E6); /* gradient from sky blue to lighter blue*/
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .sun {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #FFD700, #FFA500); /*gradient from gold to orange*/
+    border-radius: 50%;
+    animation: sun-pulse 4s infinite ease-in-out; /* pulsing animation for the sun*/
+    z-index: 2; /* places sun above the sky*/
+  }
+  
+  @keyframes sun-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1); /* slightly larger*/
+      opacity: 0.9;
+    }
+  }
+  
+  .cloud {
+    position: absolute;
+    top: 20%;
+    width: 80px;
+    height: 50px;
+    background: white;
+    border-radius: 50px;
+    animation: cloud-move 8s linear infinite; /* horizontal cloud movement*/
+  }
+  
+  .cloud:before, /* psuedo element to make the cloud look more puffy*/
+  .cloud:after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .cloud:before {
+    top: -25px;
+    left: 10px;
+  }
+  
+  .cloud:after {
+    top: -15px;
+    left: 40px;
+  }
+  
+  @keyframes cloud-move { /* moving cloud from left to right */
+    from {
+      left: -100px;
+    }
+    to {
+      left: 100%;
+    }
+  }
+  
+  .landscape-winning { /* creating landscape*/
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    z-index: 3;
+  }
+  
+  .ground-winning { /*creating ground*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, #228B22, #32CD32);
+    overflow: hidden;
+  }
+  
+  .grass { /* creating grass*/
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 30px;
+    background: #228B22;
+    border-radius: 0 0 5px 5px;
+    animation: grass-sway 2s infinite ease-in-out;
+  }
+  
+  /* odd number grass blades moving slower*/
+  .grass:nth-child(odd) {
+    animation-duration: 2.5s;
+  }
+  /*even number grass blades moving faster*/
+  .grass:nth-child(even) {
+    animation-duration: 1.5s;
+  }
+  /*animation for swaying grass*/
+  @keyframes grass-sway {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+  
