@@ -16,7 +16,6 @@
     <div id="gameContent">
 
         <div id="firstPage" class="page active">
-            <p class="firstpage" id="firstp">This is the first page</p>
             <div class="box">
                 <div id="startimg">
                     <img src="backgroundimages/forest-2942477_640.png">
@@ -34,8 +33,6 @@
         </div>
 
         <div id="secondPage" class="page">
-            <p class="secondpage" id="secondp">This is the second page</p>
-
             <div id="forest" class="box">
                 <p>Welcome to the Forest!</p>
             </div>
@@ -46,7 +43,6 @@
         </div>
 
         <div id="thirdPage" class="page">
-            <p>This is the third page</p>
             <div id="caves" class="box">
                 <div id="cavesimg">
                     <img src="backgroundimages/BattlebgCave.webp">
@@ -109,203 +105,8 @@
 
 
     </div>
-    <script>
-        // saving each page into a variable
-        const firstPage = document.querySelector('#firstPage')
-        const secondPage = document.querySelector("#secondPage")
-        const thirdPage = document.querySelector('#thirdPage')
-        const fourthPage = document.querySelector('#fourthPage')
-
-        const allpages = document.querySelectorAll('.page');
-
-        // saving each button as a variable
-        const gofirstButtons = document.querySelectorAll('.gofirst');
-        const gosecondButtons = document.querySelectorAll('.gosecond');
-        const gothirdButtons = document.querySelectorAll('.gothird');
-        const gofourthButtons = document.querySelectorAll('.gofourth');
-        const goRpsButtons = document.querySelectorAll('.goRps');
-        const goTTTButtons = document.querySelectorAll('.goTTT');
-
-        let count = 0
-
-        const counter = document.querySelector("#count");
-
-        // Loop through the NodeList and add a click event listener to each button
-        gofirstButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                hidepages();
-                firstPage.style.display = 'block';
-                count = 0
-                counter.textContent = count
-            });
-        });
-
-        gosecondButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                hidepages();
-                secondPage.style.display = 'block';
-                count++
-                counter.textContent = count
-            });
-        });
-
-        gothirdButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                hidepages();
-                thirdPage.style.display = 'block';
-            });
-        });
-
-        gofourthButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                hidepages();
-                fourthPage.style.display = 'block';
-                let fourthresult = document.querySelector('#fourthresult');
-                if (count === 1) {
-                    fourthresult.innerHTML = "you won"
-                } else if (count === 0) {
-                    fourthresult.innerHTML = ''
-                }
-            });
-        });
-
-        goRpsButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                hidepages();
-                document.querySelector('#rpsPage').style.display = 'block';
-            });
-        });
-
-        goTTTButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                hidepages();
-                document.querySelector('#TicTacToePage').style.display = 'block';
-            })
-        });
-
-        function hidepages() {
-            // Get all elements with the class 'page' and hide them
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                page.style.display = 'none';
-            });
-        }
-
-        
-        // adding event listners for all the rps mini game buttons
-        rockBtn.addEventListener("click", function() 
-        {
-            playRPS("Rock");
-        });            
-        paperBtn.addEventListener("click", function() 
-        {
-            playRPS("Paper");
-        });            
-        scissorsBtn.addEventListener("click", function() 
-        {
-            playRPS("Scissors");
-        });
-
-        // Rock paper scissors mini game code section
-        function playRPS(playerChoice)
-        {
-            // random computer choice
-            let computerChoice = Math.floor(Math.random() * 3) + 1;
-            switch (computerChoice)
-            {
-                case 1:
-                    game_status.innerHTML = "Your opponent choose paper!<br>";
-                    break;
-
-                case 2:
-                    game_status.innerHTML = "Your opponent choose scissors!<br>";
-                    break;
-                
-                case 3:
-                    game_status.innerHTML = "Your opponent choose rock!<br>";
-                    break;
-                
-            }
-
-            // displaying rps mini game result on the page
-            if (playerChoice === "Rock" && computerChoice === 2 ||
-                playerChoice === "Paper" && computerChoice === 3 ||
-                playerChoice === "Scissors" && computerChoice === 1) 
-            {
-                game_status.innerHTML += "You Win!";
-            } 
-            else if (playerChoice === "Rock" && computerChoice === 3 ||
-                    playerChoice === "Paper" && computerChoice === 1 ||
-                    playerChoice === "Scissors" && computerChoice === 2) 
-            {
-                game_status.innerHTML += "It's a tie, try again!";
-            } 
-            else 
-            {
-                game_status.innerHTML += "You Lose...";
-            }
-        }
-
-
-        const boardElement = document.getElementById("board");
-        const cells = document.querySelectorAll(".cell");
-        const messageElement = document.getElementById("TTTmessage");
-        let currentPlayer = "X";
-        let gameActive = true;
-
-        cells.forEach(cell => cell.addEventListener("click", handleCellClick));
-
-        function handleCellClick(event) {
-            const cell = event.target;
-            if (cell.textContent === "" && gameActive) {
-                cell.textContent = currentPlayer;
-                checkResult();
-                if (gameActive) {
-                    currentPlayer = "O";
-                    computerMove();
-                    checkResult();
-                    currentPlayer = "X";
-                }
-            }
-        }
-
-        function computerMove() {
-            const availableCells = Array.from(cells).filter(cell => cell.textContent === "");
-            if (availableCells.length === 0) return;
-            const randomCell = availableCells[Math.floor(Math.random() * availableCells.length)];
-            randomCell.textContent = "O";
-        }
-
-        function checkResult() {
-            const winPatterns = [
-                [0, 1, 2], [3, 4, 5], [6, 7, 8],
-                [0, 3, 6], [1, 4, 7], [2, 5, 8],
-                [0, 4, 8], [2, 4, 6]
-            ];
-
-            winPatterns.some(pattern => {
-                const [a, b, c] = pattern;
-                if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
-                    gameActive = false;
-                    messageElement.textContent = `${cells[a].textContent} wins!`;
-                    return true;
-                }
-                return false;
-            });
-
-            if (gameActive && Array.from(cells).every(cell => cell.textContent !== "")) {
-                gameActive = false;
-                messageElement.textContent = "It's a draw!";
-            }
-        }
-
-        function resetGame() {
-            currentPlayer = "X";
-            gameActive = true;
-            messageElement.textContent = "";
-            cells.forEach(cell => cell.textContent = "");
-        }
-    </script>
     <script src="scriptsfolder/main.js"></script>
+    <script src="scriptsfolder/RPS.js"></script>
+    <script src="scriptsfolder/TTT.js"></script>
 </body>
 </html>
