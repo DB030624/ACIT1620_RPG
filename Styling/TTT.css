@@ -2,7 +2,10 @@
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    gap: 5px;
+    border: 3px solid black;
+    gap: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
 }
 .cell {
     width: 100px;
@@ -13,4 +16,16 @@
     justify-content: center;
     font-size: 2rem;
     cursor: pointer;
+    transition: ease-in-out 0.25s;
+}
+
+.cell:hover {
+    background-color: paleturquoise;
+}
+
+
+
+#TTTbox {
+    margin: 10px;
+    background-color: whitesmoke;
 }

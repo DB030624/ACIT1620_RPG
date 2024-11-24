@@ -10,6 +10,7 @@ function handleCellClick(event) {
     const cell = event.target;
     if (cell.textContent === "" && gameActive) {
         cell.textContent = currentPlayer;
+        cell.style.backgroundColor = 'paleturquoise';
         checkResult();
         if (gameActive) {
             currentPlayer = "O";
@@ -25,6 +26,7 @@ function computerMove() {
     if (availableCells.length === 0) return;
     const randomCell = availableCells[Math.floor(Math.random() * availableCells.length)];
     randomCell.textContent = "O";
+    randomCell.style.backgroundColor = 'palevioletred';
 }
 
 function checkResult() {

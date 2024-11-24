@@ -68,6 +68,8 @@
             </div>
         </div>
 
+        <div 
+
         <!-- Rock paper scissors minigame block-->
         <div id="rpsPage" class="page">
             <p>It's fighting time</p>
@@ -84,24 +86,40 @@
         </div>
 
         <!-- Tic tac toe minigame block-->
+
         <div id="TicTacToePage" class="page">
-            <div id="TTTboard" class="board">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
+            <div class="box">
+                <div id="TTTbox">
+                    <div id="TTTboard" class="board">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                </div>
+                <p id="TTTmessage"></p>
+                <button onclick="resetGame()">Reset Game</button>
             </div>
-            <p id="TTTmessage"></p>
-            <button onclick="resetGame()">Reset Game</button>
         </div>
-        <p>
-            counter = <span id="count">0</span>
-        </p>
+
+            <div id="inventory">
+                <div class="TTTscore">
+                    <p>
+                        counter
+                    </p>
+                </div>
+                <div class="TTTscore">
+                    <span id="count">
+                        0
+                    </span>
+                </div>
+            </div>
+
 
 
     </div>
