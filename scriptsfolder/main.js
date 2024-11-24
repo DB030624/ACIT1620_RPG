@@ -29,7 +29,7 @@ let goToBTN = [
     [goTTTButtons, tttPage]
 ];
 
-let count = 0
+var count = 0
 
 const counter = document.querySelector("#count");
 function typeWriter()

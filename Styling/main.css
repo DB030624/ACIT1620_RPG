@@ -34,6 +34,7 @@ header {
     min-height: 300px;
     max-width: 1000px;
     max-height: 600px;
+    margin-top: 10px;
 }
 .buttonContainer {
     display: flex;
