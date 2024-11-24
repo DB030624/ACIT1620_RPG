@@ -30,6 +30,7 @@
                 <button class="gosecond">Go Second</button>
                 <button class="gothird">Go Third</button>
                 <button class="gofourth">Go fourth</button>
+                <button class ='gowinScreen'> go winScreen</button>
             </div>
         </div>
 
@@ -70,8 +71,57 @@
             <div class='buttonContainer'>
                 <button class="gofirst">Go first</button>
                 <button class="goRps">Go RPS</button>
+                <button class ='goloseScreen'>go loseScreen</button>
             </div>
         </div>
+
+        <div id="loseScreen" class="page">
+            <div id="loseScreen" class="box">
+                <div class="sky">
+                    <div class="lightning"></div>
+                  </div>
+                  <div class="landscape">
+                    <div class="ground"></div>
+                    <div class="flames">
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                      <div class="flame"></div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+        <div id="winScreen" class="page">
+            <div id = winScreen class="box">
+              <div class="sky-winning">
+                <div class="sun"></div>
+                <div class="cloud" style="animation-delay: 0s;"></div>
+                <div class="cloud" style="top: 30%; animation-delay: 2s;"></div>
+                <div class="cloud" style="top: 40%; animation-delay: 4s;"></div>
+              </div>
+              <div class="landscape-winning">
+                <div class="ground-winning">
+                  <div class="grass" style="left: 10%;"></div>
+                  <div class="grass" style="left: 20%;"></div>
+                  <div class="grass" style="left: 30%;"></div>
+                  <div class="grass" style="left: 40%;"></div>
+                  <div class="grass" style="left: 50%;"></div>
+                  <div class="grass" style="left: 60%;"></div>
+                  <div class="grass" style="left: 70%;"></div>
+                  <div class="grass" style="left: 80%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
 
         <!-- Rock paper scissors minigame block-->
         <div id="rpsPage" class="page">
@@ -118,6 +168,8 @@
         const fourthPage = document.querySelector('#fourthPage')
         const tttPage = document.querySelector("#TicTacToePage")
         const rpsPage = document.querySelector("#rpsPage")
+        const loseScreen = document.querySelector('#loseScreen')
+        const winScreen = document.querySelector('#winScreen')
 
         const allpages = document.querySelectorAll('.page');
 
@@ -128,6 +180,8 @@
         const gofourthButtons = document.querySelectorAll('.gofourth');
         const goRpsButtons = document.querySelectorAll('.goRps');
         const goTTTButtons = document.querySelectorAll('.goTTT');
+        const goloseScreen = document.querySelectorAll('.goloseScreen');
+        const gowinScreen = document.querySelectorAll('.gowinScreen');
         
         // holds all goto buttons as a array.
         let goToBTN = [
@@ -137,7 +191,9 @@
             [gofourthButtons, fourthPage],
             
             [goRpsButtons, rpsPage],
-            [goTTTButtons, tttPage]
+            [goTTTButtons, tttPage],
+            [goloseScreen, loseScreen],
+            [gowinScreen, winScreen]
         ];
 
         let count = 0
