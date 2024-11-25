@@ -7,6 +7,15 @@ const tttPage = document.querySelector("#TicTacToePage")
 const rpsPage = document.querySelector("#rpsPage")
 var currentPage; 
 
+// object that holds the paragraph for each page
+const paragraphHolder = {
+    page1: "You woke up at a strange place brother.",
+    page2: "Welcome to the Forest!",
+    page3: "Welcome to the Caves",
+    page4: "This is the Fourth Page",
+    pageRps: "It's fighting time",
+    pageTTT: "Test6"
+}
 
 const allpages = document.querySelectorAll('.page');
 
@@ -17,34 +26,39 @@ const gothirdButtons = document.querySelectorAll('.gothird');
 const gofourthButtons = document.querySelectorAll('.gofourth');
 const goRpsButtons = document.querySelectorAll('.goRps');
 const goTTTButtons = document.querySelectorAll('.goTTT');
+const buttonContainer = document.querySelectorAll('.buttonContainer')
 
 // holds all goto buttons as a array.
 let goToBTN = [
-    [gofirstButtons, firstPage],
-    [gosecondButtons, secondPage],
-    [gothirdButtons, thirdPage],
-    [gofourthButtons, fourthPage],
+    [gofirstButtons, firstPage, paragraphHolder.page1],
+    [gosecondButtons, secondPage, paragraphHolder.page2],
+    [gothirdButtons, thirdPage, paragraphHolder.page3],
+    [gofourthButtons, fourthPage, paragraphHolder.page4],
     
-    [goRpsButtons, rpsPage],
-    [goTTTButtons, tttPage]
+    [goRpsButtons, rpsPage, paragraphHolder.pageRps],
+    [goTTTButtons, tttPage, paragraphHolder.pageTTT]
 ];
 
 var count = 0
-
 const counter = document.querySelector("#count");
-function typeWriter()
+
+
+// print out the paragraph one character at a time
+function typeWriter(p)
 {
     paragraph = currentPage.querySelector(".box p");
-    tempParagraph = paragraph.textContent;
-    console.log(tempParagraph)
     var index = 0;
-    paragraph.textContent = "";
+    paragraph.textContent = " ";
     const type = () => {
-        if(index < tempParagraph.length)
+        if(index < p.length)
         {
-            paragraph.textContent += tempParagraph.charAt(index);
+            paragraph.textContent += p.charAt(index);
             index++;
             setTimeout(type, 30);
+        }
+        else
+        {
+            buttonContainer.forEach(button => button.style.display = "flex")
         }
     }
     type();
@@ -58,10 +72,12 @@ function goToButtonListener(element)
     {
         button.addEventListener("click", () => 
         {
+            buttonContainer.forEach(button => button.style.display = "none")
             hidepages();
             element[1].style.display = "block";
             currentPage = element[1];
-            typeWriter();
+            typeWriter(element[2]);
+            
         }
     )}
 )}
