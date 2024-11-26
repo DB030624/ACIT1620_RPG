@@ -5,6 +5,7 @@ const thirdPage = document.querySelector('#thirdPage')
 const fourthPage = document.querySelector('#fourthPage')
 const tttPage = document.querySelector("#TicTacToePage")
 const rpsPage = document.querySelector("#rpsPage")
+const bossPage = document.querySelector("#bossPage")
 var currentPage; 
 
 // object that holds the paragraph for each page
@@ -14,7 +15,8 @@ const paragraphHolder = {
     page3: "Welcome to the Caves",
     page4: "This is the Fourth Page",
     pageRps: "It's fighting time",
-    pageTTT: "Test6"
+    pageTTT: "Test6",
+    pageBoss: "This is Boss Room"
 }
 
 const allpages = document.querySelectorAll('.page');
@@ -26,7 +28,8 @@ const gothirdButtons = document.querySelectorAll('.gothird');
 const gofourthButtons = document.querySelectorAll('.gofourth');
 const goRpsButtons = document.querySelectorAll('.goRps');
 const goTTTButtons = document.querySelectorAll('.goTTT');
-const buttonContainer = document.querySelectorAll('.buttonContainer')
+const goBossButtons = document.querySelectorAll('.goBoss');
+const buttonContainer = document.querySelectorAll('.buttonContainer');
 
 // holds all goto buttons as a array.
 let goToBTN = [
@@ -34,7 +37,8 @@ let goToBTN = [
     [gosecondButtons, secondPage, paragraphHolder.page2],
     [gothirdButtons, thirdPage, paragraphHolder.page3],
     [gofourthButtons, fourthPage, paragraphHolder.page4],
-    
+
+    [goBossButtons, bossPage, paragraphHolder.pageBoss],
     [goRpsButtons, rpsPage, paragraphHolder.pageRps],
     [goTTTButtons, tttPage, paragraphHolder.pageTTT]
 ];
@@ -58,7 +62,11 @@ function typeWriter(p)
         }
         else
         {
-            buttonContainer.forEach(button => button.style.display = "flex")
+            if(currentPage != tttPage && currentPage != rpsPage)
+            {
+                buttonContainer.forEach(button => button.style.display = "flex")
+            }
+            
         }
     }
     type();
