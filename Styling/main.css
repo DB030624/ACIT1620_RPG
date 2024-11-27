@@ -34,6 +34,7 @@ header {
     min-height: 300px;
     max-width: 1000px;
     max-height: 600px;
+    padding: 10px;
 }
 .buttonContainer {
     display: flex;
@@ -167,11 +168,11 @@ button {
   }
   
   .sky-winning {
-    position: absolute;
-    top: 82px;
-    left: 330px;
-    width: 51.5%;
-    height: 30%;
+    position: fixed;
+    /* top: 82px;
+    left: 330px; */
+    width: 700px;
+    height: 300px;
     background: linear-gradient(to bottom, #87CEFA, #B0E0E6); /* gradient from sky blue to lighter blue*/
     overflow: hidden;
     z-index: 1;
@@ -249,8 +250,8 @@ button {
   .ground-winning { /*creating ground*/
     position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 40%;
+    width: 700px;
+    height: 200px;
     background: linear-gradient(to top, #228B22, #32CD32);
     overflow: hidden;
   }
