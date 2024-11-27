@@ -32,8 +32,10 @@ header {
     background-color: lightblue;
     min-width: 700px;
     min-height: 300px;
-    max-width: 1000px;
-    max-height: 600px;
+    /* max-width: 1000px;
+    max-height: 600px; */
+    width: 800px;
+    height: 500px;
     margin-top: 10px;
 }
 .buttonContainer {
