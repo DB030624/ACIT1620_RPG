@@ -39,7 +39,7 @@ header {
 .buttonContainer {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 }
 button {
     width: 200px;
@@ -61,4 +61,184 @@ button {
 }
 #forest {
     background-color: lightgreen;
+}
+
+#losing-screen {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #3a0000, #8b0000);
+  background-size: 400% 400%;
+  animation: backgroundMove 6s ease-in-out infinite, glowBackground 4s ease-in-out infinite alternate;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+@keyframes backgroundMove {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+@keyframes glowBackground {
+  0% {
+      filter: brightness(1);
+  }
+  100% {
+      filter: brightness(1.3);
+  }
+}
+
+#losing-screen h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7);
+  animation: pulseText 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseText {
+  0% {
+      transform: scale(1);
+      text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7);
+  }
+  100% {
+      transform: scale(1.1);
+      text-shadow: 2px 2px 12px rgba(255, 50, 50, 1);
+  }
+}
+
+#losing-screen p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  animation: fadeIn 3s ease-in-out, floatText 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatText {
+  0% {
+      transform: translateY(0px);
+  }
+  100% {
+      transform: translateY(-10px);
+  }
+}
+
+#losing-screen button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #cc0000;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: fadeIn 4s ease-in-out, glowButton 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowButton {
+  0% {
+      box-shadow: 0 0 8px rgba(255, 50, 50, 0.8), 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+  100% {
+      box-shadow: 0 0 15px rgba(255, 100, 100, 1), 0 0 25px rgba(255, 50, 50, 1);
+  }
+}
+
+#losing-screen button:hover {
+  background-color: #ff1a1a;
+  transform: scale(1.1);
+}
+
+#losing-screen button:active {
+  background-color: #990000;
+}
+
+
+
+@keyframes buttonPulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(34, 139, 34, 0.5), 0 0 10px rgba(34, 139, 34, 0.3);
+  }
+  50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 5px rgba(34, 205, 34, 0.7), 0 0 15px rgba(34, 139, 34, 0.5);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(34, 139, 34, 0.5), 0 0 10px rgba(34, 139, 34, 0.3);
+  }
+}
+
+.gosecond {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background-color: #228B22; /* Forest Green */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(34, 139, 34, 0.5), 0 0 20px rgba(34, 139, 34, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gosecond:hover {
+  background-color: #006400; /* Dark Green for hover */
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(50, 205, 50, 0.8), 0 0 30px rgba(34, 139, 34, 0.5);
+}
+
+
+.gothird {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background-color: #8B4513; /* SaddleBrown */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(139, 69, 19, 0.5), 0 0 20px rgba(101, 67, 33, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gothird:hover {
+  background-color: #5C4033; /* Darker brown for hover */
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(139, 69, 19, 0.7), 0 0 30px rgba(101, 67, 33, 0.5);
+}
+
+.gofirst {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background-color: #1E90FF; /* DodgerBlue */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.5), 0 0 20px rgba(0, 0, 255, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gofirst:hover {
+  background-color: #4682B4; /* SteelBlue for hover */
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(70, 130, 180, 0.8), 0 0 30px rgba(30, 144, 255, 0.5);
 }
