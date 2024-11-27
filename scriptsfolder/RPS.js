@@ -1,3 +1,6 @@
+const rpsButtons = document.querySelector("#rpsButtons");
+
+
 // adding event listners for all the rps mini game buttons
 rockBtn.addEventListener("click", function() 
 {
@@ -39,6 +42,10 @@ function playRPS(playerChoice)
         playerChoice === "Scissors" && computerChoice === 1) 
     {
         game_status.innerHTML += "You Win!";
+        count++
+        counter.innerHTML = count
+        rpsButtons.style.display = "none"
+        buttonContainer.forEach(button => button.style.display = "flex")
     } 
     else if (playerChoice === "Rock" && computerChoice === 3 ||
             playerChoice === "Paper" && computerChoice === 1 ||
@@ -49,5 +56,7 @@ function playRPS(playerChoice)
     else 
     {
         game_status.innerHTML += "You Lose...";
+        rpsButtons.style.display = "none"
+        buttonContainer.forEach(button => button.style.display = "flex")
     }
 }

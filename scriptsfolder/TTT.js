@@ -41,6 +41,12 @@ function checkResult() {
         if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
             gameActive = false;
             messageElement.textContent = `${cells[a].textContent} wins!`;
+            if(currentPlayer === "X")
+            {
+                count++;
+                counter.innerHTML = count;
+            }
+            buttonContainer.forEach(button => button.style.display = "flex")
             return true;
         }
         return false;
