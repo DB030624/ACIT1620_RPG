@@ -1,5 +1,6 @@
 const rpsButtons = document.querySelector("#rpsButtons");
-
+const playerChoiceImg = document.querySelector("#playerRpsImage")
+const CpuChoiceImg = document.querySelector("#cpuRpsImage")
 
 // adding event listners for all the rps mini game buttons
 rockBtn.addEventListener("click", function() 
@@ -18,6 +19,20 @@ scissorsBtn.addEventListener("click", function()
 // Rock paper scissors mini game code section
 function playRPS(playerChoice)
 {
+    switch(playerChoice)
+    {
+        case "Rock":
+            playerChoiceImg.setAttribute("src", "backgroundimages/rock.jpg")
+            break;
+
+        case "Paper":
+            playerChoiceImg.setAttribute("src", "backgroundimages/paper.jpg")
+            break
+
+        case "Scissors":
+            playerChoiceImg.setAttribute("src", "backgroundimages/rock.jpg")
+            break
+    }
     // random computer choice
     let computerChoice = Math.floor(Math.random() * 3) + 1;
     switch (computerChoice)
@@ -42,8 +57,7 @@ function playRPS(playerChoice)
         playerChoice === "Scissors" && computerChoice === 1) 
     {
         game_status.innerHTML += "You Win!";
-        count++
-        counter.innerHTML = count
+        updateCounter()
         rpsButtons.style.display = "none"
         buttonContainer.forEach(button => button.style.display = "flex")
     } 

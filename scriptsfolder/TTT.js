@@ -43,8 +43,7 @@ function checkResult() {
             messageElement.textContent = `${cells[a].textContent} wins!`;
             if(currentPlayer === "X")
             {
-                count++;
-                counter.innerHTML = count;
+                updateCounter()
             }
             buttonContainer.forEach(button => button.style.display = "flex")
             return true;
