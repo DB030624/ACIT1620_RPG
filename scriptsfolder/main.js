@@ -127,3 +127,18 @@ function damageBoss()
     }
 }
 
+
+
+function updateCounter()
+{
+    count++;
+    let img = document.createElement("img");
+    img.setAttribute("src", "backgroundimages/sword.png");
+    img.setAttribute("height", "100");
+    img.setAttribute("width", "100");
+
+   
+    counter.appendChild(img)    
+    
+}
+
