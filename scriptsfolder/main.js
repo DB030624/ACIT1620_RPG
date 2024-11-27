@@ -101,3 +101,21 @@ function hidepages() {
         page.style.display = 'none';
     });
 }
+
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
+const shakeBoss = async () => 
+{
+    const bossImg = document.querySelector("#shakeBossID");
+    bossImg.classList.add("shakeEffect");   
+    await delay(500);
+    bossImg.classList.remove("shakeEffect");
+}
+
+
+function damageBoss()
+{
+    shakeBoss();
+    const healthBar = document.querySelector("#health")
+    healthBar.value -= (5 + 20 * count)
+}
