@@ -42,6 +42,8 @@ function playRPS(playerChoice)
         playerChoice === "Scissors" && computerChoice === 1) 
     {
         game_status.innerHTML += "You Win!";
+        count++
+        counter.innerHTML = count
         rpsButtons.style.display = "none"
         buttonContainer.forEach(button => button.style.display = "flex")
     } 

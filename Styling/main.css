@@ -72,13 +72,14 @@ button {
     margin-bottom: 25px;
 }
 
-.shakeEffect
+.onHitEffect
 {
-    animation: shake 0.5s;
+    animation: onHitEffect 0.5s;
     animation-iteration-count: 1;
 }
 
-@keyframes shake {
+@keyframes onHitEffect 
+{
     0% { transform: translate(15px, 15px) rotate(0deg); }
     10% { transform: translate(-10px, -17px) rotate(-1deg); }
     20% { transform: translate(-14px, 5px) rotate(1deg); }
@@ -90,13 +91,35 @@ button {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
+}
 
 
-  #health
-  {
+#health
+{
     color:red;
-  }
+}
 
 
-  
+.onDeathEffect
+{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+    animation: onDeathEffect 2.0s;
+    animation-iteration-count: 1;
+}
+
+@keyframes onDeathEffect
+{
+    0% {transform: translate(18px, -20px)}
+    10% {transform: translate(-16px, -20px)}
+    20% {transform: translate(16px, -20px)}
+    30% {transform: translate(-17px, -20px)}
+    40% {transform: translate(19px, -20px)}
+    50% {transform: translate(-15px, -20px)}
+    60% {transform: translate(22px, -20px)}
+    70% {transform: translate(-18px, -20px)}
+    80% {transform: translate(20px, -20px)}
+    90% {transform: translate(-26px, -20px)}
+    100% {transform: translate(30px, -20px)}
+}

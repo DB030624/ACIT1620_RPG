@@ -95,21 +95,21 @@ goToBTN.forEach(goToButtonListener);
 
 
 // Get all elements with the class 'page' and hide them
-function hidepages() {
+function hidepages() 
+{
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => {
         page.style.display = 'none';
     });
 }
 
-
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const shakeBoss = async () => 
 {
-    const bossImg = document.querySelector("#shakeBossID");
-    bossImg.classList.add("shakeEffect");   
+    const bossImg = document.querySelector("#bossImgID");
+    bossImg.classList.add("onHitEffect");   
     await delay(500);
-    bossImg.classList.remove("shakeEffect");
+    bossImg.classList.remove("onHitEffect");
 }
 
 
@@ -118,4 +118,12 @@ function damageBoss()
     shakeBoss();
     const healthBar = document.querySelector("#health")
     healthBar.value -= (5 + 20 * count)
+    if(healthBar.value <= 0)
+    {
+        const hitBossButton = document.querySelector("#hitBossButton")
+        hitBossButton.style.display = "none"
+        const bossImg = document.querySelector("#bossImgID");
+        bossImg.classList.add("onDeathEffect")
+    }
 }
+
