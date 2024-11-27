@@ -54,12 +54,27 @@ button {
     background-color: rgba(165, 97, 42, 0.764);
 }
 #cavesimg {
-    margin: 10px;
-    background-image: url(../backgroundimages/BattlebgCave.webp);
+    background-color: white;
+    background-image: url(../backgroundimages/Cavepage.png);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    width: 100%;
+    height: 100%;
+    /* background-position: center center; */
+    /* position: relative; */
+    /* background-size: 100%; */
 }
 
 #startimg {
-    margin: 10px;
+    background-color: white;
+    background-image: url(../backgroundimages/Start.png);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    width: 100%;
+    height: 100%;
+    /* background-position: center center; */
+    /* position: relative; */
+    /* background-size: 100%; */
 }
 
 #forest {
