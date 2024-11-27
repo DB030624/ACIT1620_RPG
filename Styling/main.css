@@ -182,63 +182,52 @@ button {
   }
 }
 
-.gosecond {
-  padding: 0.75rem 2rem;
-  font-size: 1.2rem;
-  background-color: #228B22; /* Forest Green */
+/* General button styles */
+button {
+  width: 200px;
+  height: 40px;
+  margin: 5px;
+  margin-top: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Forest button (.gosecond) */
+.gosecond {
+  background: linear-gradient(45deg, #4ee28a, #21583e); /* Soft pastel green forest colors */
   color: white;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(34, 139, 34, 0.5), 0 0 20px rgba(34, 139, 34, 0.3);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(168, 213, 186, 0.3);
 }
 
 .gosecond:hover {
-  background-color: #006400; /* Dark Green for hover */
+  background: linear-gradient(45deg, #74fca8, #A8D5BA); /* Keeping green on hover, just lightens */
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(50, 205, 50, 0.8), 0 0 30px rgba(34, 139, 34, 0.5);
 }
 
-
+/* Cave button (.gothird) */
 .gothird {
-  padding: 0.75rem 2rem;
-  font-size: 1.2rem;
-  background-color: #8B4513; /* SaddleBrown */
-  border: none;
-  border-radius: 8px;
+  background: linear-gradient(45deg, #8B4513, #6B3E2F); /* Pastel brown cave colors */
   color: white;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(139, 69, 19, 0.5), 0 0 20px rgba(101, 67, 33, 0.3);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
 }
 
 .gothird:hover {
-  background-color: #5C4033; /* Darker brown for hover */
+  background: linear-gradient(45deg, #5C4033, #4A2C1D); /* Darker brown cave theme for hover */
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(139, 69, 19, 0.7), 0 0 30px rgba(101, 67, 33, 0.5);
 }
 
+/* Back to start button (.gofirst) */
 .gofirst {
-  padding: 0.75rem 2rem;
-  font-size: 1.2rem;
-  background-color: #1E90FF; /* DodgerBlue */
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid #4dabf7;
+  color: #4dabf7;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(30, 144, 255, 0.5), 0 0 20px rgba(0, 0, 255, 0.3);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gofirst:hover {
-  background-color: #4682B4; /* SteelBlue for hover */
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(70, 130, 180, 0.8), 0 0 30px rgba(30, 144, 255, 0.5);
+  background-color: #4dabf7;
+  color: white;
+  box-shadow: 0 0 10px #4dabf7, 0 0 20px #4dabf7, 0 0 40px #4dabf7;
 }
