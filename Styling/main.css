@@ -40,13 +40,48 @@ header {
     display: flex;
     justify-content: center;
     gap: 20px;
+    
+}
+button.gosecond, .gothird {
+  width: 200px;
+  height: 40px;
+  margin: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(45deg, #ff6b6b, #f06595);
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.gosecond:hover, button.gothird:hover {
+  background: linear-gradient(45deg, #74c0fc, #4dabf7);
+  transform: scale(1.1);
 }
 button {
-    width: 200px;
-    height: 40px;
-    margin: 5px;
-    margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  margin: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 2px solid #4dabf7;
+  color: #4dabf7;
+  background-color: transparent;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
 }
+
+button.gofirst:hover, button.goTTT:hover {
+  background-color: #4dabf7;
+  color: white;
+  box-shadow: 0 0 10px #4dabf7, 0 0 20px #4dabf7, 0 0 40px #4dabf7;
+}
+
 
 #caves {
     background-color: rgba(165, 97, 42, 0.764);
