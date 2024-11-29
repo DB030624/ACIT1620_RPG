@@ -14,13 +14,14 @@ var currentPage;
 const paragraphHolder = {
     page1: "Greetings, Traveler: You have finally awoken, disoriented at the mouth of a cave in a green, lush forest. To your left there is a treaded ground heading deeper into the forest, to your right is a mouth of a cave. Peering into it, you see a flickering light source.  Which path will you choose?",
     page2: "Welcome to the Forest!",
-    // page3: 'Nayld: "Hello traveler, be wary of these tunnels. You can follow the path with light that leads you to a settlement of unfriendly cave gnomes, or you can take your chances descending into the abandoned mine where there have been reports of buried treasure"',
-    page3: '',
+    page3: 'Nayld: "Hello traveler, be wary of these tunnels. You can follow the path with light that leads you to a settlement of unfriendly cave gnomes, or you can take your chances descending into the abandoned mine where there have been reports of buried treasure"',
     page4: "This is the Fourth Page",
-    page5: "This is the Fifth page",
+    page5: "You see a gleaming stream. You jump in and let the river wash away your worries while it carries you down stream.",
     pageRps: "It's fighting time",
-    pageTTT: "Win to Get a Power Boost!",
-    pageBoss: "This is Boss Room",
+    pageTTT: "You come across a familiar game from your childhood. Use the skills you've acquired in your youth to progress! If you win, you will get a power boost!",
+    pageBoss: `“WHO DARE DISTURBS MY SLUMBER” you hear from a not so far distance.
+Out of the shadows steps Lord Okram, the Demon of Elarion.
+“YOU! PUNY HUMAN! I WILL DESTROY YOU FOR YOUR INSOLENCE”`,
     pageGnome: `Gnome 1: "Look boys... fresh meat!"
     \nGnome 2 & 3: "Yipee!"
     \nYou were devoured by evil gnomes. You knew they were unfriendly, but you went anyways. At least you'll win a Darwin award!`
