@@ -17,7 +17,7 @@ const paragraphHolder = {
     page4: "This is the Fourth Page",
     page5: "This is the Fifth page",
     pageRps: "It's fighting time",
-    pageTTT: "Test6",
+    pageTTT: "Win to Get a Power Boost!",
     pageBoss: "This is Boss Room"
 }
 

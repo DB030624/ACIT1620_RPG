@@ -3,6 +3,8 @@ const cells = document.querySelectorAll(".cell");
 const messageElement = document.getElementById("TTTmessage");
 let currentPlayer = "X";
 let gameActive = true;
+const resetButton = document.getElementById("resetTTT");
+let resetCounter = 0;
 
 cells.forEach(cell => cell.addEventListener("click", handleCellClick));
 
@@ -61,5 +63,22 @@ function resetGame() {
     currentPlayer = "X";
     gameActive = true;
     messageElement.textContent = "";
-    cells.forEach(cell => cell.textContent = "");
+    cells.forEach(cell => {
+        cell.textContent = "";
+        cell.style.backgroundColor = ""
+    });
+
+    resetCounter++;
+
+    if (resetCounter >= 2) {
+        resetButton.style.display = "none";
+    }
+
+    if (resetCounter >= 1) {
+        resetButton.innerHTML = '1 Reset Left'
+    }
+}
+
+if (resetCounter >= 2) {
+    resetButton.classList.add("hidden");
 }
