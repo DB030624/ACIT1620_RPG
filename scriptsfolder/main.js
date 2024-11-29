@@ -8,6 +8,7 @@ const tttPage = document.querySelector("#TicTacToePage")
 const rpsPage = document.querySelector("#rpsPage")
 const gnomePage = document.querySelector("#gnomePage")
 const bossPage = document.querySelector("#bossPage")
+const bossFightLose = document.querySelector("#bossFightLose")
 var currentPage; 
 var bossFightClickTime = 0;
 // object that holds the paragraph for each page
@@ -127,17 +128,24 @@ const shakeBoss = async () =>
 
 function damageBoss()
 {
-    
-    shakeBoss();
-    const healthBar = document.querySelector("#health")
-    healthBar.value -= (5 + 20 * count)
-    if(healthBar.value <= 0)
+    if(bossFightClickTime < 10)
     {
-        const hitBossButton = document.querySelector("#hitBossButton")
-        hitBossButton.style.display = "none"
-        const bossImg = document.querySelector("#bossImgID");
-        bossImg.classList.add("onDeathEffect")
-
+        bossFightClickTime++;
+        shakeBoss();
+        const healthBar = document.querySelector("#health")
+        healthBar.value -= (5 + 20 * count)
+        if(healthBar.value <= 0)
+        {
+            const hitBossButton = document.querySelector("#hitBossButton")
+            hitBossButton.style.display = "none"
+            const bossImg = document.querySelector("#bossImgID");
+            bossImg.classList.add("onDeathEffect")
+        }
+    }
+    else
+    {
+        bossFightLose.style.display = "block"
+        bossFightLose.classList.add("onBossLose")
     }
 }
 

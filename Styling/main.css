@@ -268,5 +268,33 @@ button:hover {
 
 #bossPage .box
 {
-  height: 550px;
+  height: 650px;
+}
+
+#bossFightLose
+{
+  display: none;
+  position: absolute;
+  background-image: url("../backgroundimages/you\ died.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 150%;
+}
+
+.onBossLose
+{
+  animation: onBossLoseEffect 2s ease-in-out;
+}
+
+@keyframes onBossLoseEffect {
+  0%
+  {
+    opacity: 0;
+  }
+  100%
+  {
+    opacity: 1;
+  }
 }
