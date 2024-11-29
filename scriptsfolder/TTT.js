@@ -1,9 +1,9 @@
 const boardElement = document.getElementById("board");
 const cells = document.querySelectorAll(".cell");
 const messageElement = document.getElementById("TTTmessage");
+const resetButton = document.getElementById("resetTTT");
 let currentPlayer = "X";
 let gameActive = true;
-const resetButton = document.getElementById("resetTTT");
 let resetCounter = 0;
 
 cells.forEach(cell => cell.addEventListener("click", handleCellClick));
@@ -12,6 +12,10 @@ function handleCellClick(event) {
     const cell = event.target;
     if (cell.textContent === "" && gameActive) {
         cell.textContent = currentPlayer;
+        
+        // Add the clicked class to trigger the animation
+        cell.classList.add("clicked");
+
         cell.style.backgroundColor = 'paleturquoise';
         checkResult();
         if (gameActive) {
@@ -43,6 +47,7 @@ function checkResult() {
         if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
             gameActive = false;
             messageElement.textContent = `${cells[a].textContent} wins!`;
+            showResetButton();
             if(currentPlayer === "X")
             {
                 updateCounter()
@@ -56,6 +61,7 @@ function checkResult() {
     if (gameActive && Array.from(cells).every(cell => cell.textContent !== "")) {
         gameActive = false;
         messageElement.textContent = "It's a draw!";
+        showResetButton();
     }
 }
 
@@ -70,15 +76,20 @@ function resetGame() {
 
     resetCounter++;
 
-    if (resetCounter >= 2) {
-        resetButton.style.display = "none";
+    if (resetCounter === 1) {
+        resetButton.innerHTML = "1 Reset Left";
+    } else if (resetCounter >= 2) {
+        resetButton.style.display = "none"; 
+        // Hide button after 2 resets
     }
 
-    if (resetCounter >= 1) {
-        resetButton.innerHTML = '1 Reset Left'
-    }
+    //hide button after reset
+    resetButton.style.display = "none";
+
 }
 
-if (resetCounter >= 2) {
-    resetButton.classList.add("hidden");
+function showResetButton() {
+    if (resetCounter < 2) {
+        resetButton.style.display = "block"; // Show button after win/draw
+    }
 }

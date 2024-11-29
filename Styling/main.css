@@ -6,11 +6,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    background-image: url(../backgroundimages/Forest\ River.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 header {
     display: flex;
     background-color: lightskyblue;
     width: 100%;
+    height: 70px;
     justify-content: center;
     align-items: center;
 }
@@ -23,6 +28,8 @@ header {
 #gameContent{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    box-shadow: 0 0 50px darkgrey;
 }
 .box {
     display:flex;
@@ -34,9 +41,9 @@ header {
     min-height: 300px; */
     /* max-width: 1000px;
     max-height: 600px; */
-    width: 680px;
+    width: 740px;
     height: 450px;
-    margin-top: 10px;
+
 }
 .buttonContainer {
     display: flex;
@@ -97,8 +104,11 @@ button {
     background-color: lightgreen;
 }
 
-
-
+#inventory {
+  border: 2px solid black;
+  background-color: lightsteelblue;
+  padding-left: 10px;
+}
 
 #bossPage .box img
 {
@@ -159,7 +169,7 @@ button {
     100% {transform: translate(30px, -20px)}
 }
 
-#losing-screen {
+/* #losing-screen {
   width: 100%;
   height: 100vh;
   background: linear-gradient(135deg, #3a0000, #8b0000);
@@ -276,10 +286,11 @@ button {
       transform: scale(1);
       box-shadow: 0 0 5px rgba(34, 139, 34, 0.5), 0 0 10px rgba(34, 139, 34, 0.3);
   }
-}
+} */
 
 .buttonContainer {
   border: 1px solid black;
+  background-color: darkgrey;
 }
 /* General button styles */
 button {
