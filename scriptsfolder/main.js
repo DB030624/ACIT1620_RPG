@@ -9,7 +9,7 @@ const rpsPage = document.querySelector("#rpsPage")
 const gnomePage = document.querySelector("#gnomePage")
 const bossPage = document.querySelector("#bossPage")
 var currentPage; 
-
+var bossFightClickTime = 0;
 // object that holds the paragraph for each page
 const paragraphHolder = {
     page1: "Greetings, Traveler: You have finally awoken, disoriented at the mouth of a cave in a green, lush forest. To your left there is a treaded ground heading deeper into the forest, to your right is a mouth of a cave. Peering into it, you see a flickering light source.  Which path will you choose?",
@@ -127,6 +127,7 @@ const shakeBoss = async () =>
 
 function damageBoss()
 {
+    
     shakeBoss();
     const healthBar = document.querySelector("#health")
     healthBar.value -= (5 + 20 * count)
@@ -136,6 +137,7 @@ function damageBoss()
         hitBossButton.style.display = "none"
         const bossImg = document.querySelector("#bossImgID");
         bossImg.classList.add("onDeathEffect")
+
     }
 }
 
