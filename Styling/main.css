@@ -298,3 +298,16 @@ button:hover {
     opacity: 1;
   }
 }
+
+#powerUp {
+  font-size: 30px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 600;
+  animation: glowing 3s infinite alternate;
+}
+
+@keyframes glowing {
+  0% { text-shadow: 0 0 5px darkorange, 0 0 10px darkorange, 0 0 15px darkorange, 0 0 20px darkorange, 0 0 25px darkorange, 0 0 30px darkorange, 0 0 35px darkorange; }
+  50% { text-shadow: 0 0 10px darkorange, 0 0 20px darkorange, 0 0 30px darkorange, 0 0 40px darkorange, 0 0 50px darkorange, 0 0 60px darkorange, 0 0 70px darkorange; }
+  100% { text-shadow: 0 0 5px darkorange, 0 0 10px darkorange, 0 0 15px darkorange, 0 0 20px darkorange, 0 0 25px darkorange, 0 0 30px darkorange, 0 0 35px darkorange; }
+}

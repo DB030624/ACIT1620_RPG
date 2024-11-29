@@ -14,7 +14,7 @@ var bossFightClickTime = 0;
 // object that holds the paragraph for each page
 const paragraphHolder = {
     page1: "Greetings, Traveler: You have finally awoken, disoriented at the mouth of a cave in a green, lush forest. To your left there is a treaded ground heading deeper into the forest, to your right is a mouth of a cave. Peering into it, you see a flickering light source.  Which path will you choose?",
-    page2: "Welcome to the Forest!",
+    page2: "Following the treaded path, you come across a giant apple tree. Studying your surroundings, you hear what sounds like moving water.",
     page3: 'Nayld: "Hello traveler, be wary of these tunnels. You can follow the path with light that leads you to a settlement of unfriendly cave gnomes, or you can take your chances descending into the abandoned mine where there have been reports of buried treasure"',
     page4: "This is the Fourth Page",
     page5: "You see a gleaming stream. You jump in and let the river wash away your worries while it carries you down stream.",
@@ -24,8 +24,8 @@ const paragraphHolder = {
 Out of the shadows steps Lord Okram, the Demon of Elarion.
 “YOU! PUNY HUMAN! I WILL DESTROY YOU FOR YOUR INSOLENCE”`,
     pageGnome: `Gnome 1: "Look boys... fresh meat!"
-    \nGnome 2 & 3: "Yipee!"
-    \nYou were devoured by evil gnomes. You knew they were unfriendly, but you went anyways. At least you'll win a Darwin award!`
+    \n Gnome 2 & 3: "Yipee!"
+    \n You were devoured by evil gnomes. You knew they were unfriendly, but you went anyways. At least you'll win a Darwin award!`
 }
 
 const allpages = document.querySelectorAll('.page');
@@ -156,7 +156,7 @@ function updateCounter()
 {
     count++;
     let img = document.createElement("img");
-    img.setAttribute("src", "backgroundimages/sword.png");
+    img.setAttribute("src", "../iconimages/swordup.png");
     img.setAttribute("height", "100");
     img.setAttribute("width", "100");
 
