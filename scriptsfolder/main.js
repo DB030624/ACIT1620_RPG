@@ -133,13 +133,14 @@ function damageBoss()
         bossFightClickTime++;
         shakeBoss();
         const healthBar = document.querySelector("#health")
-        healthBar.value -= (5 + 20 * count)
+        healthBar.value -= (5 + 95 * count)
         if(healthBar.value <= 0)
         {
             const hitBossButton = document.querySelector("#hitBossButton")
             hitBossButton.style.display = "none"
             const bossImg = document.querySelector("#bossImgID");
             bossImg.classList.add("onDeathEffect")
+            healthBar.style.display = "none"
         }
     }
     else
