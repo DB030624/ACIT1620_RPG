@@ -3,7 +3,7 @@ html, body {
     padding: 0;
 }
 p {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:'Times New Roman', Times, serif;
 }
 body {
     display: flex;
@@ -46,16 +46,25 @@ header {
 
 }
 
+.storyImg {
+  justify-content: center;
+}
+
 .storyBox {
   position: absolute;
   bottom: 0;
-  opacity: 50%;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.527);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 #caves {
     background-color: rgba(165, 97, 42, 0.764);
 }
+
 #cavesimg {
     background-color: white;
     background-image: url(../backgroundimages/Cavepage.png);
