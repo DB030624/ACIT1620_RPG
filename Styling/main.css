@@ -45,7 +45,10 @@ header {
     height: 450px;
 
 }
-
+.pageImg
+{
+  background-position: center;
+}
 .storyImg {
   justify-content: center;
 }
@@ -68,6 +71,7 @@ header {
 #cavesimg {
     background-color: white;
     background-image: url(../backgroundimages/Cavepage.png);
+    background-position: center;
     background-size: cover;
     width: 100%;
     height: 100%;
