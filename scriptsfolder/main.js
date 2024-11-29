@@ -22,9 +22,8 @@ const paragraphHolder = {
     pageTTT: "Win to Get a Power Boost!",
     pageBoss: "This is Boss Room",
     pageGnome: `Gnome 1: "Look boys... fresh meat!"
-Gnome 2 & 3: "Yipee!"
-
-You were devoured by evil gnomes. You knew they were unfriendly, but you went anyways. At least you'll win a Darwin award!`
+    \nGnome 2 & 3: "Yipee!"
+    \nYou were devoured by evil gnomes. You knew they were unfriendly, but you went anyways. At least you'll win a Darwin award!`
 }
 
 const allpages = document.querySelectorAll('.page');
@@ -48,7 +47,7 @@ let goToBTN = [
     [gothirdButtons, thirdPage, paragraphHolder.page3],
     [gofourthButtons, fourthPage, paragraphHolder.page4],
     [gofifthButtons, fifthPage, paragraphHolder.page5],
-    [goGnomeButtons, gnomePage, paragraphHolder.pageGnome]
+    [goGnomeButtons, gnomePage, paragraphHolder.pageGnome],
 
     [goBossButtons, bossPage, paragraphHolder.pageBoss],
     [goRpsButtons, rpsPage, paragraphHolder.pageRps],
