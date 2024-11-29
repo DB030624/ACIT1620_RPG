@@ -76,11 +76,12 @@ function resetGame() {
     currentPlayer = "X";
     gameActive = true;
     messageElement.textContent = "";
+    //this clears all the cells
     cells.forEach(cell => {
         cell.textContent = "";
         cell.style.backgroundColor = ""
     });
-
+    // this adds a counter everytime the reset button is pressed, you only have a limited amount of tries
     resetCounter++;
 
     if (resetCounter === 1) {

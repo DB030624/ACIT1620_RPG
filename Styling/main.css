@@ -276,6 +276,16 @@ button:hover {
   color: white;
 }
 
+.goGnome {
+  background-color: #583f21;
+  color: white;
+}
+
+.goTTT {
+  background-color: rgb(130, 78, 26);
+  color: white;
+}
+
 .goBoss {
 color: white; 
 text-align: center; 
