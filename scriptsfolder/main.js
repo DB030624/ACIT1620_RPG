@@ -68,6 +68,11 @@ function typeWriter(p)
     var index = 0;
     paragraph.textContent = " ";
     const type = () => {
+        if(currentPage == bossPage)
+        {
+            const hitBossButton = document.querySelector("#hitBossButton")
+            hitBossButton.disabled = true;
+        }
         if(index < p.length)
         {
             paragraph.textContent += p.charAt(index);
@@ -80,7 +85,11 @@ function typeWriter(p)
             {
                 buttonContainer.forEach(button => button.style.display = "flex")
             }
-
+            if(currentPage == bossPage)
+            {
+                const hitBossButton = document.querySelector("#hitBossButton")
+                hitBossButton.disabled = false;
+            }
         }
     }
     type();
@@ -126,6 +135,25 @@ const shakeBoss = async () =>
     bossImg.classList.remove("onHitEffect");
 }
 
+const displayWinMessage = async () =>
+    {
+        await delay(2000)
+        const bossPageWinText = document.querySelector("#bossPage .storyBox p")
+        bossPageWinText.style.display = "block"
+        let wintext = "Congadulation! You saved the world of Elarion."
+        bossPageWinText.innerHTML = ""
+        let index = 0
+        const type = () => {
+            if(index < wintext.length)
+            {
+                bossPageWinText.innerHTML += wintext.charAt(index);
+                index++;
+                setTimeout(type, 30);
+            }
+        }
+        type()
+
+    }
 
 function damageBoss()
 {
@@ -142,6 +170,7 @@ function damageBoss()
             const bossImg = document.querySelector("#bossImgID");
             bossImg.classList.add("onDeathEffect")
             healthBar.style.display = "none"
+            displayWinMessage()
         }
     }
     else
