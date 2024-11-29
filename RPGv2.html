@@ -17,13 +17,14 @@
     <div id="gameContent">
         <div id="firstPage" class="page active">
             <div class="box">
-                <div id="startimg">
-                    <p>
-                    </p>
+                <div id="startimg" class="pageImg">
+                    <div class="storyBox">
+                        <p>
+                            Greetings, Traveler: You’ve finally awoken, disoriented at the mouth of a cave in a green, lush forest. To your left there is a treaded ground heading deeper into the forest, to your right is a mouth of a cave. Peering into it, you see a flickering light source.  Which path will you choose?
+                        </p>
+                    </div>
                 </div>
-                <p>
-                    You woke up at a strange place brother.
-                </p>
+
             </div>
 
             <div class='buttonContainer' id="firstpagebuttons">
@@ -34,8 +35,11 @@
 
         <div id="secondPage" class="page">
             <div id="forest" class="box">
-                <div id="forestimg"></div>
-                <p>Welcome to the Forest!</p>
+                <div id="forestimg" class="pageImg">
+                    <div class="storyBox">
+                        <p>Welcome to the Forest!</p>
+                    </div>
+                </div>
             </div>
             <div class='buttonContainer'>
                 <button class="goRps">To Deep Forest</button>     
@@ -45,16 +49,18 @@
 
         <div id="thirdPage" class="page">
             <div id="caves" class="box">
-                <div id="cavesimg">
-                    <!-- <img src="backgroundimages/BattlebgCave.webp"> -->
+                <div id="cavesimg" class="pageImg">
+                    <div class="storyBox">
+                        <p>
+                            Welcome to the Caves
+                        </p>
+                    </div>
                 </div>
-                <p>
-                    Welcome to the Caves
-                </p>
+
             </div>
             <div class='buttonContainer'>
-                <button class="gofifth">To River</button>
-                <button class="goTTT">Go Deep Caves</button> 
+                <button class="goGnome">To the Cave Gnomes</button>
+                <button class="goTTT">To Abandoned Mine</button>
             </div>
         </div>
 
@@ -76,11 +82,24 @@
 
         <div id="fifthPage" class="page">
             <div class="box">
-                <div id="riverimg"></div>
-                <p></p>
+                <div id="riverimg" class="pageImg">
+                    <div class="storyBox">
+                        <p></p>
+                    </div>
+                </div>
             </div>
             <div class='buttonContainer'>
                 <button class="goBoss">Go to Boss Room</button>
+            </div>
+        </div>
+
+        <div id="gnomePage" class="page">
+            <div class="box">
+                <div id="gnomeImg" class="pageImg">
+                    <div class="storyBox">
+                        <p></p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -114,7 +133,7 @@
 
         <div id="TicTacToePage" class="page">
             <div class="box">
-                <div id="TTTpageimg">
+                <div id="TTTpageimg" class="pageImg">
                     <div id="TTTbox">
                         <div id="TTTboard" class="board">
                             <div class="cell"></div>
@@ -140,14 +159,16 @@
         <div id="bossPage" class="page">
             <!-- <p>This is the Boss Page</p> -->
             <div class="box">
-                <div id="bossRoomImg">
+                <div id="bossRoomImg" class="pageImg">
                     <progress id="health" max="1000" value="1000"></progress>
                     <div id="bossImgID">
                     <img src="characterimages/Lord_Ocram.png" alt="Boss Image">
                     </div>
                     <button id="hitBossButton" onclick="damageBoss()">Hit</button>
                 </div>
-                <p></p>
+                <div class="storyBox">
+                    <p></p>
+                </div>
             </div>
             <div class='buttonContainer'>
             </div>
@@ -160,8 +181,8 @@
         </div>
         <div id="inventory">
             <div class="TTTscore">
-                <p>
-                    Attack
+                <p id="PowerUp">
+                    Power Up
                 </p>
             </div>
             <div class="TTTscore">

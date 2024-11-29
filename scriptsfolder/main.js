@@ -6,19 +6,24 @@ const fourthPage = document.querySelector('#fourthPage')
 const fifthPage = document.querySelector('#fifthPage')
 const tttPage = document.querySelector("#TicTacToePage")
 const rpsPage = document.querySelector("#rpsPage")
+const gnomePage = document.querySelector("#gnomePage")
 const bossPage = document.querySelector("#bossPage")
 var currentPage; 
 
 // object that holds the paragraph for each page
 const paragraphHolder = {
-    page1: "You woke up at a strange place brother.",
+    page1: "Greetings, Traveler: You have finally awoken, disoriented at the mouth of a cave in a green, lush forest. To your left there is a treaded ground heading deeper into the forest, to your right is a mouth of a cave. Peering into it, you see a flickering light source.  Which path will you choose?",
     page2: "Welcome to the Forest!",
-    page3: "Welcome to the Caves",
+    // page3: 'Nayld: "Hello traveler, be wary of these tunnels. You can follow the path with light that leads you to a settlement of unfriendly cave gnomes, or you can take your chances descending into the abandoned mine where there have been reports of buried treasure"',
+    page3: '',
     page4: "This is the Fourth Page",
     page5: "This is the Fifth page",
     pageRps: "It's fighting time",
     pageTTT: "Win to Get a Power Boost!",
-    pageBoss: "This is Boss Room"
+    pageBoss: "This is Boss Room",
+    pageGnome: `Gnome 1: "Look boys... fresh meat!"
+    \nGnome 2 & 3: "Yipee!"
+    \nYou were devoured by evil gnomes. You knew they were unfriendly, but you went anyways. At least you'll win a Darwin award!`
 }
 
 const allpages = document.querySelectorAll('.page');
@@ -32,6 +37,7 @@ const gofifthButtons = document.querySelectorAll('.gofifth')
 const goRpsButtons = document.querySelectorAll('.goRps');
 const goTTTButtons = document.querySelectorAll('.goTTT');
 const goBossButtons = document.querySelectorAll('.goBoss');
+const goGnomeButtons = document.querySelectorAll('.goGnome')
 const buttonContainer = document.querySelectorAll('.buttonContainer');
 
 // holds all goto buttons as a array.
@@ -41,6 +47,7 @@ let goToBTN = [
     [gothirdButtons, thirdPage, paragraphHolder.page3],
     [gofourthButtons, fourthPage, paragraphHolder.page4],
     [gofifthButtons, fifthPage, paragraphHolder.page5],
+    [goGnomeButtons, gnomePage, paragraphHolder.pageGnome],
 
     [goBossButtons, bossPage, paragraphHolder.pageBoss],
     [goRpsButtons, rpsPage, paragraphHolder.pageRps],
