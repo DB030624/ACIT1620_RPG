@@ -67,7 +67,7 @@ function typeWriter(p)
     paragraph = currentPage.querySelector(".box p");
     var index = 0;
     paragraph.textContent = " ";
-    const type = () => {
+    const typee = () => {
         if(currentPage == bossPage)
         {
             const hitBossButton = document.querySelector("#hitBossButton")
@@ -77,7 +77,7 @@ function typeWriter(p)
         {
             paragraph.textContent += p.charAt(index);
             index++;
-            setTimeout(type, 30);
+            setTimeout(typee, 20);
         }
         else
         {
@@ -92,7 +92,7 @@ function typeWriter(p)
             }
         }
     }
-    type();
+    typee();
 }
 
 
@@ -140,7 +140,7 @@ const displayWinMessage = async () =>
         await delay(2000)
         const bossPageWinText = document.querySelector("#bossPage .storyBox p")
         bossPageWinText.style.display = "block"
-        let wintext = "Congadulation! You saved the world of Elarion."
+        let wintext = "Congratulation! You saved the world of Elarion."
         bossPageWinText.innerHTML = ""
         let index = 0
         const type = () => {

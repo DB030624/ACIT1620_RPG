@@ -70,7 +70,7 @@ function playRPS(playerChoice)
         }
         else
         {
-            game_status.innerHTML = "You hurt the wizard! The wizard ran away.";
+            game_status.innerHTML = "You hurt the wizard! The wizard decide to run away.";
             updateCounter()
             rpsButtons.style.display = "none"
             buttonContainer.forEach(button => button.style.display = "flex")
