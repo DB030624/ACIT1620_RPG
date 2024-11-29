@@ -69,26 +69,19 @@ header {
     background-color: white;
     background-image: url(../backgroundimages/Cavepage.png);
     background-size: cover;
-    /* background-repeat: no-repeat; */
     width: 100%;
     height: 100%;
     position: relative;
-    /* background-position: center center; */
-    /* position: relative; */
-    /* background-size: 100%; */
+
 }
 
 #startimg {
     background-color: white;
     background-image: url(../backgroundimages/Start.png);
     background-size: cover;
-    /* background-repeat: no-repeat; */
     width: 100%;
     height: 100%;
     position: relative;
-    /* background-position: center center; */
-    /* position: relative; */
-    /* background-size: 100%; */
 }
 
 #forestimg {
@@ -132,7 +125,8 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-top: 20px;
 }
 
 #inventory {
@@ -207,7 +201,6 @@ header {
   align-items: center;
   display: flex;
   justify-content: space-evenly;
-  /* width: 100%; */
 }
 
 /* General button styles */
@@ -226,21 +219,19 @@ button:hover {
   box-shadow: 0 4px 8px rgba(20, 30, 30, 0.842);
 }
 
-/* Forest button (.gosecond) */
 .gosecond {
-  background: linear-gradient(45deg, #237644, #21583e); /* Soft pastel green forest colors */
+  background: linear-gradient(45deg, #237644, #21583e);
   color: white;
   box-shadow: 0 0 8px rgba(168, 213, 186, 0.3);
 }
 
 .gosecond:hover {
-  background: linear-gradient(45deg, #1aa54f, #277846); /* Keeping green on hover, just lightens */
+  background: linear-gradient(45deg, #1aa54f, #277846);
   transform: scale(1.1);
 }
 
-/* Cave button (.gothird) */
 .gothird {
-  background: linear-gradient(45deg, #8B4513, #6B3E2F); /* Pastel brown cave colors */
+  background: linear-gradient(45deg, #8B4513, #6B3E2F); 
   color: white;
   box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
 }
@@ -250,7 +241,6 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* Back to start button (.gofirst) */
 .gofirst {
   background-color: red;
   border: 2px solid black;
@@ -263,6 +253,31 @@ button:hover {
   color: white;
   box-shadow: 0 0 10px #4df756, 0 0 20px #50f74d, 0 0 40px #4df74d;
   border: 2px solid white;
+}
+
+.gofifth {
+  background-color: deepskyblue;
+  color: white;
+}
+
+.goRps {
+  background-color: #21583e;
+  color: white;
+}
+
+.goBoss {
+color: white; 
+text-align: center; 
+text-decoration: none; 
+background: linear-gradient(45deg, red, rgb(102, 8, 8)); 
+border: 2px solid rgb(113, 5, 5); 
+border-radius: 10px; 
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s; 
+cursor: pointer;
+}
+
+.goBoss:hover {
+  transform: scale(1.1); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2)
 }
 
 
@@ -303,11 +318,4 @@ button:hover {
   font-size: 30px;
   font-family:'Times New Roman', Times, serif;
   font-weight: 600;
-  animation: glowing 3s infinite alternate;
-}
-
-@keyframes glowing {
-  0% { text-shadow: 0 0 5px darkorange, 0 0 10px darkorange, 0 0 15px darkorange, 0 0 20px darkorange, 0 0 25px darkorange, 0 0 30px darkorange, 0 0 35px darkorange; }
-  50% { text-shadow: 0 0 10px darkorange, 0 0 20px darkorange, 0 0 30px darkorange, 0 0 40px darkorange, 0 0 50px darkorange, 0 0 60px darkorange, 0 0 70px darkorange; }
-  100% { text-shadow: 0 0 5px darkorange, 0 0 10px darkorange, 0 0 15px darkorange, 0 0 20px darkorange, 0 0 25px darkorange, 0 0 30px darkorange, 0 0 35px darkorange; }
 }
