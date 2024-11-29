@@ -147,7 +147,7 @@ function updateCounter()
 {
     count++;
     let img = document.createElement("img");
-    img.setAttribute("src", "backgroundimages/sword.png");
+    img.setAttribute("src", "../iconimages/swordup.png");
     img.setAttribute("height", "100");
     img.setAttribute("width", "100");
 
