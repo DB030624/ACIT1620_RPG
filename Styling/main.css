@@ -96,6 +96,14 @@ button {
   height: 100%;
 }
 
+#gnomeImg {
+  background-color: white;
+  background-image: url(../backgroundimages/Mine\ Gnomes\ Room.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
 #forest {
     background-color: lightgreen;
 }
