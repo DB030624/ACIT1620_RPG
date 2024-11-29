@@ -95,7 +95,7 @@ function typeWriter(p)
     typee();
 }
 
-
+// this is the most simple way to have different html pages without having to go to a new html file
 // Loop through the NodeList and add a click event listener to each button
 function goToButtonListener(element)
 {
