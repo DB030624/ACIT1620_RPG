@@ -264,3 +264,9 @@ button:hover {
   box-shadow: 0 0 10px #4df756, 0 0 20px #50f74d, 0 0 40px #4df74d;
   border: 2px solid white;
 }
+
+
+#bossPage .box
+{
+  height: 550px;
+}

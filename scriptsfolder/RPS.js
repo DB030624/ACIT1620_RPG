@@ -1,6 +1,9 @@
 const rpsButtons = document.querySelector("#rpsButtons");
 const playerChoiceImg = document.querySelector("#playerRpsImage")
+const computerChoiceImg = document.querySelector("#cpuRpsImage")
+const rpsPageParagraph = document.querySelector("#rpsPage .box p")
 const CpuChoiceImg = document.querySelector("#cpuRpsImage")
+let rpsPlayCount = 0;
 
 // adding event listners for all the rps mini game buttons
 rockBtn.addEventListener("click", function() 
@@ -19,18 +22,20 @@ scissorsBtn.addEventListener("click", function()
 // Rock paper scissors mini game code section
 function playRPS(playerChoice)
 {
+    
+    rpsPageParagraph.style.display = "none"
     switch(playerChoice)
     {
         case "Rock":
-            playerChoiceImg.setAttribute("src", "backgroundimages/rock.jpg")
+            playerChoiceImg.setAttribute("src", "../iconimages/flame.png")
             break;
 
         case "Paper":
-            playerChoiceImg.setAttribute("src", "backgroundimages/paper.jpg")
+            playerChoiceImg.setAttribute("src", "../iconimages/leaf.png")
             break
 
         case "Scissors":
-            playerChoiceImg.setAttribute("src", "backgroundimages/rock.jpg")
+            playerChoiceImg.setAttribute("src", "../iconimages/wave.png")
             break
     }
     // random computer choice
@@ -38,15 +43,16 @@ function playRPS(playerChoice)
     switch (computerChoice)
     {
         case 1:
-            game_status.innerHTML = "Your opponent choose paper!<br>";
+            computerChoiceImg.setAttribute("src", "../iconimages/flame.png")
             break;
 
         case 2:
-            game_status.innerHTML = "Your opponent choose scissors!<br>";
+            
+            computerChoiceImg.setAttribute("src", "../iconimages/leaf.png")
             break;
         
         case 3:
-            game_status.innerHTML = "Your opponent choose rock!<br>";
+            computerChoiceImg.setAttribute("src", "../iconimages/wave.png")
             break;
         
     }
@@ -56,21 +62,41 @@ function playRPS(playerChoice)
         playerChoice === "Paper" && computerChoice === 3 ||
         playerChoice === "Scissors" && computerChoice === 1) 
     {
-        game_status.innerHTML += "You Win!";
-        updateCounter()
-        rpsButtons.style.display = "none"
-        buttonContainer.forEach(button => button.style.display = "flex")
+        if(rpsPlayCount < 2)
+        {
+            rpsPlayCount++;
+            game_status.innerHTML = "You hurt the wizard! You feel stronger.";
+            updateCounter()
+        }
+        else
+        {
+            game_status.innerHTML = "You hurt the wizard! The wizard ran away.";
+            updateCounter()
+            rpsButtons.style.display = "none"
+            buttonContainer.forEach(button => button.style.display = "flex")
+        }
+        
     } 
-    else if (playerChoice === "Rock" && computerChoice === 3 ||
-            playerChoice === "Paper" && computerChoice === 1 ||
-            playerChoice === "Scissors" && computerChoice === 2) 
+
+    else if (playerChoice === "Rock" && computerChoice === 1 ||
+            playerChoice === "Paper" && computerChoice === 2 ||
+            playerChoice === "Scissors" && computerChoice === 3) 
     {
-        game_status.innerHTML += "It's a tie, try again!";
+        game_status.innerHTML = "The spells canceled each other out! Quickly cast the next one!";
     } 
     else 
     {
-        game_status.innerHTML += "You Lose...";
-        rpsButtons.style.display = "none"
-        buttonContainer.forEach(button => button.style.display = "flex")
+        if(rpsPlayCount < 2)
+        {
+            rpsPlayCount++;
+            game_status.innerHTML = "The wizard hurts you, OUCH!";
+        }
+        else
+        {
+            game_status.innerHTML = "The wizard hurts you, you decide to escape";
+            rpsButtons.style.display = "none"
+            buttonContainer.forEach(button => button.style.display = "flex")
+        }
+        
     }
 }
