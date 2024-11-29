@@ -132,14 +132,16 @@
             </div>
         </div>
         <div id="bossPage" class="page">
-            <p>This is the Boss Page</p>
+            <!-- <p>This is the Boss Page</p> -->
             <div class="box">
-                <p></p>
-                <progress id="health" max="1000" value="1000"></progress>
-                <div id="bossImgID">
+                <div id="bossRoomImg">
+                    <progress id="health" max="1000" value="1000"></progress>
+                    <div id="bossImgID">
                     <img src="characterimages/Lord_Ocram.png" alt="Boss Image">
+                    </div>
+                    <button id="hitBossButton" onclick="damageBoss()">Hit</button>
                 </div>
-                <button id="hitBossButton" onclick="damageBoss()">Hit</button>
+                <p></p>
             </div>
             <div class='buttonContainer'>
             </div>
