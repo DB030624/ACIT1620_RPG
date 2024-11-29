@@ -77,7 +77,7 @@ function typeWriter(p)
             {
                 buttonContainer.forEach(button => button.style.display = "flex")
             }
-            
+
         }
     }
     type();
@@ -150,6 +150,5 @@ function updateCounter()
 
    
     counter.appendChild(img)    
-    
 }
 

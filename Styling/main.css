@@ -262,3 +262,9 @@ button {
   color: white;
   box-shadow: 0 0 10px #4dabf7, 0 0 20px #4dabf7, 0 0 40px #4dabf7;
 }
+
+
+#bossPage .box
+{
+  height: 550px;
+}
