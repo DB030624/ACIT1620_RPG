@@ -15,7 +15,7 @@ function handleCellClick(event) {
         
         // Add the clicked class to trigger the animation
         cell.classList.add("clicked");
-
+        // This changes color when a cell is clicked on
         cell.style.backgroundColor = 'paleturquoise';
         checkResult();
         if (gameActive) {
@@ -28,13 +28,18 @@ function handleCellClick(event) {
 }
 
 function computerMove() {
+    // this finds all the possible cells that are empty
     const availableCells = Array.from(cells).filter(cell => cell.textContent === "");
+    // return if all cells are filled
     if (availableCells.length === 0) return;
+    // chooses a random cell from all the available cells using math.random()
     const randomCell = availableCells[Math.floor(Math.random() * availableCells.length)];
     randomCell.textContent = "O";
+    // changes the computer chosen cell to a different color
     randomCell.style.backgroundColor = 'palevioletred';
 }
 
+// This function is for checking if someone has won or not
 function checkResult() {
     const winPatterns = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -42,14 +47,16 @@ function checkResult() {
         [0, 4, 8], [2, 4, 6]
     ];
 
+    // .some is used on array to check if the any value within passes the conditional, returns True or False
     winPatterns.some(pattern => {
         const [a, b, c] = pattern;
+        // checks if 3 same symbol in a row
         if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
             gameActive = false;
             messageElement.textContent = `${cells[a].textContent} wins!`;
             showResetButton();
-            if(currentPlayer === "X")
-            {
+            if(currentPlayer === "X") {
+                // this Adds a power up if player wins
                 updateCounter()
             }
             buttonContainer.forEach(button => button.style.display = "flex")
