@@ -19,7 +19,7 @@ const paragraphHolder = {
     page3: 'Nayld: "Hello traveler, be wary of these tunnels. You can follow the path with light that leads you to a settlement of unfriendly cave gnomes, or you can take your chances descending into the abandoned mine where there have been reports of buried treasure"',
     page4: "This is the Fourth Page",
     page5: "You see a gleaming stream. You jump in and let the river wash away your worries while it carries you down stream.",
-    pageRps: "It's fighting time",
+    pageRps: "Ecurb the Wicked has challenged you to a duel!",
     pageTTT: "You come across a familiar game from your childhood. Use the skills you've acquired in your youth to progress! If you win, you will get a power boost!",
     pageBoss: `“WHO DARE DISTURBS MY SLUMBER” you hear from a not so far distance.
 Out of the shadows steps Lord Okram, the Demon of Elarion.
