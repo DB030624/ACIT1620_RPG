@@ -29,4 +29,12 @@
 #TTTbox {
     margin: 10px;
     background-color: whitesmoke;
+    position: absolute;
+    left: 180px;
+}
+
+#resetTTT {
+    position: absolute;
+    bottom: 20px;
+    left: 220px;
 }

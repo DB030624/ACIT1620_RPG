@@ -10,11 +10,11 @@
 <body>
     <header>
         <h1>
-            BCIT CHOICES GAME
+            Hero's Journey
         </h1>
     </header>
+    
     <div id="gameContent">
-
         <div id="firstPage" class="page active">
             <div class="box">
                 <div id="startimg">
@@ -38,8 +38,8 @@
                 <p>Welcome to the Forest!</p>
             </div>
             <div class='buttonContainer'>
-                <button class="goRps">Deep Forest</button>     
-                <button class="gofifth">Go fifth</button>    
+                <button class="goRps">To Deep Forest</button>     
+                <button class="gofifth">To River</button>    
             </div>
         </div>
 
@@ -53,8 +53,8 @@
                 </p>
             </div>
             <div class='buttonContainer'>
-                <button class="gofifth">Go first</button>
-                <button class="goTTT">Go TTT</button> 
+                <button class="gofifth">To River</button>
+                <button class="goTTT">Go Deep Caves</button> 
             </div>
         </div>
 
@@ -108,21 +108,23 @@
 
         <div id="TicTacToePage" class="page">
             <div class="box">
-                <div id="TTTbox">
-                    <div id="TTTboard" class="board">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                <div id="TTTpageimg">
+                    <div id="TTTbox">
+                        <div id="TTTboard" class="board">
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                        </div>
                     </div>
+                    <p id="TTTmessage"></p>
+                    <button id="resetTTT" onclick="resetGame()">Reset Game</button>
                 </div>
-                <p id="TTTmessage"></p>
-                <button onclick="resetGame()">Reset Game</button>
             </div>
             <div class='buttonContainer'>
                 <button class="goBoss">Go to Boss Room</button>       
